@@ -62,5 +62,9 @@ jobs:
             set net:timeout 30
             set mirror:parallel-transfer-count 1
             mirror -R --delete --verbose --ignore-time --parallel=1 ./dist /
+            # Force-upload index.html: lftp mirror пропускает его если совпал size,
+            # а у Vite-сборки имя index.html постоянное и размер часто не меняется.
+            rm -f /index.html
+            put dist/index.html -o /index.html
             bye
           EOF
