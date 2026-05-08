@@ -41,7 +41,7 @@ export default function Home() {
               Архитектура чистого воздуха
             </h1>
             <p className="font-sans text-[#F5F1E6]/70 text-lg md:text-xl max-w-2xl mb-12 leading-relaxed font-light">
-              ZEMAIR — это не просто очиститель воздуха с подогревом. Это монолитный элемент интерьера, защищающий вас от пыли, вирусов и аллергенов. Технологическое безмолвие для пространств высшего порядка.
+              ZEMAIR — это не обычный приточный очиститель воздуха с подогревом. Это монолитный элемент интерьера, защищающий вас от пыли, вирусов и аллергенов. Технологическое безмолвие для пространств высшего порядка.
             </p>
             <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
               <button className="bg-[#f2ca50] text-[#16130b] px-12 py-5 font-sans text-[10px] font-bold uppercase tracking-[0.25em] hover:bg-[#d4af37] transition-all flex items-center justify-center gap-3 cursor-pointer">

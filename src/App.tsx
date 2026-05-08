@@ -11,6 +11,8 @@ import Privacy from './pages/Privacy';
 import Manuals from './pages/Manuals';
 import Sales from './pages/Sales';
 import Press from './pages/Press';
+import FAQ from './pages/FAQ';
+import UserManual from './pages/UserManual';
 
 export default function App() {
   return (
@@ -28,6 +30,8 @@ export default function App() {
           <Route path="/manuals" element={<Manuals />} />
           <Route path="/sales" element={<Sales />} />
           <Route path="/press" element={<Press />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/user-manual" element={<UserManual />} />
         </Routes>
       </Layout>
     </BrowserRouter>

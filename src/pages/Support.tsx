@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Mail, Phone, MapPin, FileText, Download, ShieldCheck } from 'lucide-react';
+import { Mail, Phone, MapPin, FileText, Download, ShieldCheck, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Support() {
   const sections = [
@@ -27,13 +28,42 @@ export default function Support() {
       <div className="max-w-7xl mx-auto px-6">
         <header className="mb-24">
           <h1 className="font-display text-6xl md:text-8xl tracking-tight mb-8">Поддержка</h1>
-          <p className="text-zinc-500 max-w-2xl text-xl font-light">
+          <p className="text-zinc-500 max-w-2xl text-xl font-light leading-relaxed">
             Мы обеспечиваем безупречный сервис на протяжении всего срока службы вашего устройства. Персональные инженеры ZEMAIR готовы помочь с установкой и калибровкой системы.
           </p>
         </header>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-32">
-          {/* Contact Cards */}
+          {/* Support options shortcut */}
+          <Link to="/user-manual" className="group bg-[#1f1b13] p-10 border border-zinc-800/10 flex flex-col justify-between hover:border-[#f2ca50]/50 transition-all">
+             <div>
+               <h3 className="font-display text-2xl mb-4">База знаний</h3>
+               <p className="text-zinc-500 text-sm font-light">Полное интерактивное руководство пользователя со всеми техническими деталями.</p>
+             </div>
+             <div className="flex items-center gap-4 text-[#f2ca50] font-display text-[10px] uppercase tracking-widest mt-12">
+                Открыть руководство <ChevronRight size={14} className="group-hover:translate-x-2 transition-transform" />
+             </div>
+          </Link>
+          <Link to="/faq" className="group bg-[#1f1b13] p-10 border border-zinc-800/10 flex flex-col justify-between hover:border-[#f2ca50]/50 transition-all">
+             <div>
+               <h3 className="font-display text-2xl mb-4">Ответы на FAQ</h3>
+               <p className="text-zinc-500 text-sm font-light">Ответы на самые популярные вопросы о выборе, установке и эксплуатации.</p>
+             </div>
+             <div className="flex items-center gap-4 text-[#f2ca50] font-display text-[10px] uppercase tracking-widest mt-12">
+                Смотреть все вопросы <ChevronRight size={14} className="group-hover:translate-x-2 transition-transform" />
+             </div>
+          </Link>
+          <div className="bg-[#1f1b13] p-10 border border-zinc-800/10 flex flex-col justify-between">
+             <div>
+               <h3 className="font-display text-2xl mb-4">Сервис 24/7</h3>
+               <p className="text-zinc-500 text-sm font-light">Свяжитесь с нами напрямую для получения персональной консультации.</p>
+             </div>
+             <div className="text-[#f2ca50] font-display text-xl mt-12">+7 985 991 63 44</div>
+          </div>
+        </div>
+
+        {/* Contact Cards */}
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-32 hidden md:grid">
           {[
             { icon: <Phone size={24} />, title: "Консьерж-сервис", content: "+7 985 991 63 44", action: "Позвонить" },
             { icon: <Mail size={24} />, title: "Электронная почта", content: "care@zemair.com", action: "Написать" },

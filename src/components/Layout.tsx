@@ -102,10 +102,12 @@ export default function Layout({ children }: LayoutProps) {
           
           <div className="flex flex-wrap justify-center gap-8 md:gap-12">
             {[
-              { name: 'Политика конфиденциальности', path: '/privacy' },
-              { name: 'Руководства', path: '/manuals' },
+              { name: 'FAQ', path: '/faq' },
+              { name: 'Руководство', path: '/user-manual' },
+              { name: 'Документация', path: '/manuals' },
               { name: 'Продажи', path: '/sales' },
-              { name: 'Пресс-кит', path: '/press' }
+              { name: 'Пресс-кит', path: '/press' },
+              { name: 'Конфиденциальность', path: '/privacy' }
             ].map(item => (
               <Link key={item.path} to={item.path} className="font-display text-[9px] uppercase tracking-widest text-[#8E8E93] hover:text-[#f2ca50] transition-colors">
                 {item.name}
