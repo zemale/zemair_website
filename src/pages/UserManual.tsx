@@ -110,19 +110,19 @@ export default function UserManual() {
             <h2 className="font-display text-3xl md:text-4xl text-[#f2ca50] uppercase tracking-wider">3. Режимы работы</h2>
             <div className="space-y-12">
               <div className="border-l-4 border-zinc-800 pl-8 space-y-4">
-                <h3 className="font-display text-2xl">AVTO (Автоматический)</h3>
+                <h3 className="font-display text-2xl">АВТОМАТИЧЕСКИЙ</h3>
                 <p className="text-zinc-400 font-light text-lg">Интеллектуальная система Smart Sync сама выбирает скорость вентилятора на основе данных от датчиков PM2.5 и CO2. Это идеальный режим для ежедневного использования.</p>
               </div>
               <div className="border-l-4 border-zinc-800 pl-8 space-y-4">
-                <h3 className="font-display text-2xl">NIGHT (Ночной)</h3>
+                <h3 className="font-display text-2xl">НОЧНОЙ</h3>
                 <p className="text-zinc-400 font-light text-lg">Минимальный уровень шума (18 дБ) и приглушенная индикация. Обеспечивает приток свежего воздуха, не мешая вашему отдыху.</p>
               </div>
               <div className="border-l-4 border-zinc-800 pl-8 space-y-4">
-                <h3 className="font-display text-2xl">TURBO (Максимальный)</h3>
+                <h3 className="font-display text-2xl">МАКСИМАЛЬНЫЙ</h3>
                 <p className="text-zinc-400 font-light text-lg">Используйте для быстрой очистки помещения от запахов или после уборки. Максимальный поток — до 200 м³/час.</p>
               </div>
               <div className="border-l-4 border-zinc-800 pl-8 space-y-4">
-                <h3 className="font-display text-2xl">HEATING (Подогрев)</h3>
+                <h3 className="font-display text-2xl">ПОДОГРЕВ</h3>
                 <p className="text-zinc-400 font-light text-lg">Включается автоматически при температуре ниже +15°C. Мощность 800 Вт позволяет комфортно пользоваться бризером даже в -30°C.</p>
               </div>
             </div>
