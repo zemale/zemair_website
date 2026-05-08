@@ -28,6 +28,23 @@ jobs:
       - name: Build
         run: npm run build
 
+      # AI Studio периодически удаляет verification-файлы как «outdated».
+      # Регенерируем их прямо в dist/ — на проде они будут при любом раскладе.
+      - name: Inject SEO verification files
+        run: |
+          cat > dist/yandex_2b1cbcf41d8fabad.html <<'EOF'
+          <html>
+              <head>
+                  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+              </head>
+              <body>Verification: 2b1cbcf41d8fabad</body>
+          </html>
+          EOF
+          cat > dist/google7a266ca7df8dc492.html <<'EOF'
+          google-site-verification: google7a266ca7df8dc492.html
+          EOF
+          ls -la dist/yandex_*.html dist/google*.html
+
       - name: Install lftp
         run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
 
