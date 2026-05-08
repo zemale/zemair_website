@@ -24,7 +24,7 @@ export default function ProductDetail() {
             animate={{ opacity: 1, x: 0 }}
             className="sticky top-32"
           >
-            <div className="bg-[#1f1b13] p-12 aspect-[1/1.5] relative flex items-center justify-center overflow-hidden border border-zinc-800/20 shadow-2xl">
+            <div className="bg-[#1f1b13] p-6 md:p-12 aspect-[1/1.5] relative flex items-center justify-center overflow-hidden border border-zinc-800/20 shadow-2xl">
               <div className="relative w-full h-full">
                 {item.img ? (
                   <>
@@ -41,7 +41,16 @@ export default function ProductDetail() {
                     ></motion.div>
                   </>
                 ) : (
-                  <div className={`w-full h-full ${item.color} opacity-20`} />
+                  <div className={`w-full h-full ${item.color} flex items-center justify-center relative`}>
+                     <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-black/40 opacity-50"></div>
+                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-20"></div>
+                     <motion.div 
+                        animate={{ opacity: [0.3, 0.6, 0.3] }}
+                        transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                        className={`absolute top-1/4 left-0 w-full h-[1px] ${item.led} led-glow`}
+                     ></motion.div>
+                     <span className="font-display text-[200px] opacity-10 font-black italic tracking-tighter">Z</span>
+                  </div>
                 )}
               </div>
             </div>

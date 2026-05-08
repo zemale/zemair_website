@@ -101,10 +101,15 @@ export default function Layout({ children }: LayoutProps) {
           </div>
           
           <div className="flex flex-wrap justify-center gap-8 md:gap-12">
-            {['Политика конфиденциальности', 'Руководства', 'Продажи', 'Пресс-кит'].map(item => (
-              <a key={item} href="#" className="font-display text-[9px] uppercase tracking-widest text-[#8E8E93] hover:text-[#f2ca50] transition-colors">
-                {item}
-              </a>
+            {[
+              { name: 'Политика конфиденциальности', path: '/privacy' },
+              { name: 'Руководства', path: '/manuals' },
+              { name: 'Продажи', path: '/sales' },
+              { name: 'Пресс-кит', path: '/press' }
+            ].map(item => (
+              <Link key={item.path} to={item.path} className="font-display text-[9px] uppercase tracking-widest text-[#8E8E93] hover:text-[#f2ca50] transition-colors">
+                {item.name}
+              </Link>
             ))}
           </div>
 

@@ -83,4 +83,19 @@ export const catalogItems: CatalogItem[] = [
     led: 'bg-[#f2ca50]/40', 
     img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBDUe7OV6_wkNWV9MS-_5JIaiQvyOMyVjTJtZEVGyNXqzEhKZ4ek1HO-rIJFjLvpy7eIve1utelsO5bgMCA7YNLPKsR0hjWQLZ23jNPsc3rVrr4bMDZexQwD_ihRg9XqXVipj2n9mQdZF5iQcfH-6e8vZDagM0kpKtjvFI-stAktaMerGakra5myXq9jlOM0Nj4a53JDeAp19t0TYpcORYjkZZOQ7xETn4NLf4KVr8r0La1W8dxWq-nqVkD5d-m0R7xPeDTtXkU_Yc' 
   },
+  { 
+    id: 'brushed-copper',
+    title: 'Brushed Copper', 
+    subtitle: 'Copper Limited Edition', 
+    color: 'bg-[#B87333]', 
+    led: 'bg-[#ff7700]/60', 
+    img: null,
+    description: 'Теплый оттенок меди с глубокой горизонтальной шлифовкой. Ограниченная серия для интерьеров с характером.',
+    features: ['Натуральная медь', 'Антибактериальная поверхность', 'Уникальный рисунок шлифовки'],
+    specs: {
+      'Материал': 'Медь M1',
+      'Очистка': 'HEPA H13 + Carbon',
+      'Шум': 'от 18 дБ'
+    }
+  },
 ];

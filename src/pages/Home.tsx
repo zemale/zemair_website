@@ -37,7 +37,7 @@ export default function Home() {
             <span className="font-display text-xs uppercase tracking-[0.3em] text-[#f2ca50] mb-6 block">
               Инженерное совершенство
             </span>
-            <h1 className="font-display text-7xl md:text-[110px] leading-[0.95] mb-10 font-normal tracking-tight">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-[110px] leading-[0.95] mb-10 font-normal tracking-tight">
               Архитектура чистого воздуха
             </h1>
             <p className="font-sans text-[#F5F1E6]/70 text-lg md:text-xl max-w-2xl mb-12 leading-relaxed font-light">
@@ -80,10 +80,10 @@ export default function Home() {
       <section id="catalog" className="py-24 px-6 max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-sans text-[10px] uppercase tracking-[0.4em] text-[#f2ca50] mb-6 font-semibold">Каталог продукции</h2>
-          <h3 className="font-display text-5xl font-normal tracking-tight">Серия Monolith</h3>
+          <h3 className="font-display text-4xl md:text-5xl font-normal tracking-tight">Серия Monolith</h3>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
           {catalogItems.slice(0, 5).map((item, idx) => (
             <motion.div
               key={item.id}
@@ -111,8 +111,15 @@ export default function Home() {
                         ></motion.div>
                       </>
                     ) : (
-                      <div className={`w-full h-full ${item.color} opacity-20 flex items-center justify-center`}>
-                         <span className="font-display text-6xl opacity-5">Z</span>
+                      <div className={`w-full h-full ${item.color} flex items-center justify-center relative`}>
+                         <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-black/40 opacity-50"></div>
+                         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-20"></div>
+                         <motion.div 
+                            animate={{ opacity: [0.3, 0.6, 0.3] }}
+                            transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                            className={`absolute top-1/4 left-0 w-full h-[1px] ${item.led} led-glow`}
+                         ></motion.div>
+                         <span className="font-display text-8xl opacity-10 font-black italic tracking-tighter">Z</span>
                       </div>
                     )}
                   </div>
@@ -159,9 +166,9 @@ export default function Home() {
              />
              <div className="absolute inset-0 bg-gradient-to-r from-[#16130b] to-transparent hidden md:block"></div>
           </div>
-          <div className="md:col-span-5 bg-[#16130b] p-12 md:p-20 flex flex-col justify-center">
-            <h2 className="font-display text-4xl mb-8 leading-tight">Архитектурная кастомизация</h2>
-            <p className="text-zinc-400 mb-10 leading-relaxed">
+          <div className="md:col-span-5 bg-[#16130b] p-8 md:p-20 flex flex-col justify-center">
+            <h2 className="font-display text-3xl md:text-4xl mb-8 leading-tight">Архитектурная кастомизация</h2>
+            <p className="text-zinc-400 mb-10 leading-relaxed text-sm md:text-base">
               ZEMAIR — это не бытовой прибор, а часть архитектуры. Мы интегрируем системы очистки воздуха в стены, колонны и мебельные конструкции, сохраняя чистоту линий вашего проекта.
             </p>
             <ul className="space-y-6 mb-12">
@@ -193,37 +200,37 @@ export default function Home() {
         </h2>
         
         <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-auto md:grid-rows-2 gap-4 h-auto md:min-h-[650px]">
-          <div className="md:col-span-2 md:row-span-2 bg-[#1f1b13] p-12 flex flex-col justify-end border border-zinc-800/10 relative group overflow-hidden">
-            <div className="absolute top-12 right-12 opacity-10 group-hover:opacity-20 transition-opacity">
-               <Filter size={120} strokeWidth={0.5} />
+          <div className="md:col-span-2 md:row-span-2 bg-[#1f1b13] p-8 md:p-12 flex flex-col justify-end border border-zinc-800/10 relative group overflow-hidden min-h-[300px]">
+            <div className="absolute top-8 right-8 md:top-12 md:right-12 opacity-10 group-hover:opacity-20 transition-opacity">
+               <Filter size={80} md:size={120} strokeWidth={0.5} />
             </div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              <h4 className="font-display text-2xl mb-4 uppercase tracking-wider">H13 HEPA Фильтрация</h4>
-              <p className="text-zinc-400 leading-relaxed">
+              <h4 className="font-display text-xl md:text-2xl mb-4 uppercase tracking-wider">H13 HEPA Фильтрация</h4>
+              <p className="text-zinc-400 leading-relaxed text-xs md:text-base">
                 Пятиступенчатая система очистки задерживает 99.97% частиц, включая вирусы и аллергены. Тишина работы на уровне шепота.
               </p>
             </motion.div>
           </div>
 
-          <div className="md:col-span-2 bg-[#1f1b13] p-10 flex items-center justify-between border border-zinc-800/10 group">
+          <div className="md:col-span-2 bg-[#1f1b13] p-8 md:p-10 flex items-center justify-between border border-zinc-800/10 group">
             <div className="max-w-[70%]">
-              <h4 className="font-display text-xl mb-2 text-[#f2ca50]">Smart Sync</h4>
-              <p className="text-sm text-zinc-500">Автоматическая адаптация к качеству воздуха в реальном времени.</p>
+              <h4 className="font-display text-lg md:text-xl mb-2 text-[#f2ca50]">Smart Sync</h4>
+              <p className="text-[10px] md:text-sm text-zinc-500">Автоматическая адаптация к качеству воздуха в реальном времени.</p>
             </div>
-            <Cpu size={48} strokeWidth={1} className="text-[#f2ca50]/50 group-hover:text-[#f2ca50] transition-colors" />
+            <Cpu size={32} md:size={48} strokeWidth={1} className="text-[#f2ca50]/50 group-hover:text-[#f2ca50] transition-colors" />
           </div>
 
-          <div className="bg-[#1f1b13] p-10 border border-zinc-800/10 flex flex-col justify-center items-center text-center">
-            <span className="text-5xl font-display font-light text-[#f2ca50] mb-2">18дБ</span>
+          <div className="bg-[#1f1b13] p-8 md:p-10 border border-zinc-800/10 flex flex-col justify-center items-center text-center">
+            <span className="text-4xl md:text-5xl font-display font-light text-[#f2ca50] mb-2">18дБ</span>
             <p className="font-display text-[9px] uppercase tracking-widest text-[#8E8E93]">Уровень шума</p>
           </div>
           
-          <div className="bg-[#1f1b13] p-10 border border-zinc-800/10 flex flex-col justify-center items-center text-center group">
-            <span className="text-5xl font-display font-light text-[#f2ca50] mb-2 group-hover:scale-110 transition-transform duration-500">600</span>
+          <div className="bg-[#1f1b13] p-8 md:p-10 border border-zinc-800/10 flex flex-col justify-center items-center text-center group">
+            <span className="text-4xl md:text-5xl font-display font-light text-[#f2ca50] mb-2 group-hover:scale-110 transition-transform duration-500">600</span>
             <p className="font-display text-[9px] uppercase tracking-widest text-[#8E8E93]">м³/час поток</p>
           </div>
         </div>

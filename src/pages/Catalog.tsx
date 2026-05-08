@@ -15,7 +15,7 @@ export default function Catalog() {
           </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
           {catalogItems.map((item, idx) => (
             <motion.div
               key={item.id}
@@ -42,8 +42,16 @@ export default function Catalog() {
                         ></motion.div>
                       </>
                     ) : (
-                      <div className={`w-full h-full ${item.color} opacity-20 flex items-center justify-center`}>
-                         <span className="font-display text-6xl opacity-5">Z</span>
+                      <div className={`w-full h-full ${item.color} flex items-center justify-center relative`}>
+                         {/* Metallic Texture overlay */}
+                         <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-black/40 opacity-50"></div>
+                         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-20"></div>
+                         <motion.div 
+                            animate={{ opacity: [0.3, 0.6, 0.3] }}
+                            transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                            className={`absolute top-1/4 left-0 w-full h-[1px] ${item.led} led-glow`}
+                         ></motion.div>
+                         <span className="font-display text-8xl opacity-10 font-black italic tracking-tighter">Z</span>
                       </div>
                     )}
                   </div>

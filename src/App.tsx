@@ -7,6 +7,10 @@ import Technology from './pages/Technology';
 import AirQuality from './pages/AirQuality';
 import Sustainability from './pages/Sustainability';
 import Support from './pages/Support';
+import Privacy from './pages/Privacy';
+import Manuals from './pages/Manuals';
+import Sales from './pages/Sales';
+import Press from './pages/Press';
 
 export default function App() {
   return (
@@ -20,6 +24,10 @@ export default function App() {
           <Route path="/air-quality" element={<AirQuality />} />
           <Route path="/sustainability" element={<Sustainability />} />
           <Route path="/support" element={<Support />} />
+          <Route path="/privacy" element={<Privacy />} />
+          <Route path="/manuals" element={<Manuals />} />
+          <Route path="/sales" element={<Sales />} />
+          <Route path="/press" element={<Press />} />
         </Routes>
       </Layout>
     </BrowserRouter>
