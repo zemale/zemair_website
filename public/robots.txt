@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zemair.ru/sitemap.xml
+Host: zemair.ru
