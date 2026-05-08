@@ -66,7 +66,7 @@ export default function Support() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-32 hidden md:grid">
           {[
             { icon: <Phone size={24} />, title: "Консьерж-сервис", content: "+7 985 991 63 44", action: "Позвонить" },
-            { icon: <Mail size={24} />, title: "Электронная почта", content: "care@zemair.com", action: "Написать" },
+            { icon: <Mail size={24} />, title: "Электронная почта", content: "air@zemair.com", action: "Написать" },
             { icon: <MapPin size={24} />, title: "Шоурум", content: "Арбат, 10, Москва", action: "Маршрут" }
           ].map((card, i) => (
             <div key={i} className="bg-[#1f1b13] p-10 border border-zinc-800/10 flex flex-col justify-between aspect-square lg:aspect-auto">
