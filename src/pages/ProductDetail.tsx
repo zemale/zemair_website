@@ -99,9 +99,12 @@ export default function ProductDetail() {
               </div>
             )}
 
-            <button className="w-full bg-[#f2ca50] text-[#16130b] py-6 font-display text-[11px] font-bold uppercase tracking-[0.3em] hover:bg-[#d4af37] transition-all transform hover:-translate-y-1 cursor-pointer">
+            <a 
+              href="mailto:air@zemair.ru"
+              className="inline-block w-full bg-[#f2ca50] text-[#16130b] py-6 font-display text-[11px] font-bold uppercase tracking-[0.3em] hover:bg-[#d4af37] transition-all transform hover:-translate-y-1 cursor-pointer text-center"
+            >
               ОФОРМИТЬ ПРЕДЗАКАЗ
-            </button>
+            </a>
           </motion.div>
         </div>
       </div>

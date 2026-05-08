@@ -44,10 +44,13 @@ export default function Home() {
               ZEMAIR — это не обычный приточный очиститель воздуха с подогревом. Это монолитный элемент интерьера, защищающий вас от пыли, вирусов и аллергенов. Технологическое безмолвие для пространств высшего порядка.
             </p>
             <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
-              <button className="bg-[#f2ca50] text-[#16130b] px-12 py-5 font-sans text-[10px] font-bold uppercase tracking-[0.25em] hover:bg-[#d4af37] transition-all flex items-center justify-center gap-3 cursor-pointer">
+              <a 
+                href="mailto:air@zemair.ru"
+                className="bg-[#f2ca50] text-[#16130b] px-12 py-5 font-sans text-[10px] font-bold uppercase tracking-[0.25em] hover:bg-[#d4af37] transition-all flex items-center justify-center gap-3 cursor-pointer"
+              >
                 Запрос на интеграцию
                 <ArrowRight size={14} />
-              </button>
+              </a>
               <div className="flex items-center gap-4 px-6 border-l border-zinc-800">
                 <div className="w-16 h-[2px] bg-[#f2ca50] relative overflow-hidden">
                   <motion.div 
@@ -143,9 +146,12 @@ export default function Home() {
             <VolumeX className="text-[#f2ca50] mb-8" size={64} strokeWidth={1} />
             <h3 className="font-display text-2xl mb-4">Индивидуальный проект</h3>
             <p className="text-sm text-zinc-400 mb-10 leading-relaxed">Создаем уникальные финиши под ваш интерьер: от натурального камня до редких сплавов.</p>
-            <button className="border border-[#f2ca50] text-[#f2ca50] px-10 py-3 font-display text-[10px] uppercase tracking-widest hover:bg-[#f2ca50] hover:text-[#16130b] transition-all duration-300 cursor-pointer">
+            <a 
+              href="mailto:air@zemair.ru"
+              className="border border-[#f2ca50] text-[#f2ca50] px-10 py-3 font-display text-[10px] uppercase tracking-widest hover:bg-[#f2ca50] hover:text-[#16130b] transition-all duration-300 cursor-pointer text-center"
+            >
               ОБСУДИТЬ
-            </button>
+            </a>
           </div>
         </div>
         <div className="mt-16 text-center">
@@ -199,21 +205,17 @@ export default function Home() {
           Технологическое превосходство
         </h2>
         
-        <div className="grid grid-cols-1 md:grid-cols-4 grid-rows-auto md:grid-rows-2 gap-4 h-auto md:min-h-[650px]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 h-auto md:min-h-[650px]">
           <div className="md:col-span-2 md:row-span-2 bg-[#1f1b13] p-8 md:p-12 flex flex-col justify-end border border-zinc-800/10 relative group overflow-hidden min-h-[300px]">
             <div className="absolute top-8 right-8 md:top-12 md:right-12 opacity-10 group-hover:opacity-20 transition-opacity">
                <Filter size={80} md:size={120} strokeWidth={0.5} />
             </div>
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-            >
+            <div className="relative z-10">
               <h4 className="font-display text-xl md:text-2xl mb-4 uppercase tracking-wider">H13 HEPA Фильтрация</h4>
               <p className="text-zinc-400 leading-relaxed text-xs md:text-base">
                 Пятиступенчатая система очистки задерживает 99.97% частиц, включая вирусы и аллергены. Тишина работы на уровне шепота.
               </p>
-            </motion.div>
+            </div>
           </div>
 
           <div className="md:col-span-2 bg-[#1f1b13] p-8 md:p-10 flex items-center justify-between border border-zinc-800/10 group">
@@ -230,13 +232,13 @@ export default function Home() {
           </div>
           
           <div className="bg-[#1f1b13] p-8 md:p-10 border border-zinc-800/10 flex flex-col justify-center items-center text-center group">
-            <span className="text-4xl md:text-5xl font-display font-light text-[#f2ca50] mb-2 group-hover:scale-110 transition-transform duration-500">600</span>
+            <span className="text-4xl md:text-5xl font-display font-light text-[#f2ca50] mb-2 group-hover:scale-110 transition-transform duration-500">200</span>
             <p className="font-display text-[9px] uppercase tracking-widest text-[#8E8E93]">м³/час поток</p>
           </div>
         </div>
       </section>
 
-      {/* Final Form CTA */}
+      {/* Final CTA */}
       <section className="py-24 px-6">
         <div className="max-w-4xl mx-auto py-24 border border-zinc-800/50 bg-[#1f1b13]/40 backdrop-blur-sm relative overflow-hidden text-center px-8 md:px-20">
           <div className="absolute top-0 left-0 w-20 h-20 border-l border-t border-[#f2ca50]/30"></div>
@@ -244,28 +246,15 @@ export default function Home() {
           
           <h2 className="font-display text-4xl mb-6 uppercase tracking-tight">Создайте свою архитектуру воздуха</h2>
           <p className="text-[#F5F1E6]/70 text-lg mb-12 opacity-70">
-            Оставьте запрос на персональную консультацию и интеграцию системы в ваш проект.
+            Для персональной консультации и интеграции системы в ваш проект, пожалуйста, отправьте запрос на нашу электронную почту.
           </p>
           
-          <form className="max-w-md mx-auto space-y-8" onSubmit={(e) => e.preventDefault()}>
-            <div className="relative border-b border-zinc-700 focus-within:border-[#f2ca50] transition-colors group">
-              <input 
-                type="text" 
-                placeholder="ИМЯ" 
-                className="w-full bg-transparent border-none py-4 text-[#F5F1E6] focus:ring-0 font-display text-[10px] tracking-[0.2em] placeholder:text-zinc-600 outline-none"
-              />
-            </div>
-            <div className="relative border-b border-zinc-700 focus-within:border-[#f2ca50] transition-colors group">
-              <input 
-                type="email" 
-                placeholder="ЭЛЕКТРОННАЯ ПОЧТА" 
-                className="w-full bg-transparent border-none py-4 text-[#F5F1E6] focus:ring-0 font-display text-[10px] tracking-[0.2em] placeholder:text-zinc-600 outline-none"
-              />
-            </div>
-            <button className="w-full bg-[#f2ca50] text-[#16130b] py-6 font-display text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-[#d4af37] transition-all transform hover:-translate-y-1 cursor-pointer">
-              ОТПРАВИТЬ ЗАЯВКУ
-            </button>
-          </form>
+          <a 
+            href="mailto:air@zemair.ru"
+            className="inline-block w-full max-w-md bg-[#f2ca50] text-[#16130b] py-6 font-display text-[11px] font-bold uppercase tracking-[0.3em] hover:bg-[#d4af37] transition-all transform hover:-translate-y-1 cursor-pointer text-center"
+          >
+            ОТПРАВИТЬ ЗАПРОС НА ПОЧТУ
+          </a>
         </div>
       </section>
     </>

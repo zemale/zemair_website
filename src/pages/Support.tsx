@@ -65,9 +65,9 @@ export default function Support() {
         {/* Contact Cards */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mb-32 hidden md:grid">
           {[
-            { icon: <Phone size={24} />, title: "Консьерж-сервис", content: "+7 985 991 63 44", action: "Позвонить" },
-            { icon: <Mail size={24} />, title: "Электронная почта", content: "air@zemair.com", action: "Написать" },
-            { icon: <MapPin size={24} />, title: "Шоурум", content: "Арбат, 10, Москва", action: "Маршрут" }
+            { icon: <Phone size={24} />, title: "Консьерж-сервис", content: "+7 985 991 63 44", action: "Позвонить", type: 'phone' },
+            { icon: <Mail size={24} />, title: "Электронная почта", content: "air@zemair.com", action: "Написать", type: 'email' },
+            { icon: <MapPin size={24} />, title: "Шоурум", content: "Арбат, 10, Москва", action: "Маршрут", type: 'map' }
           ].map((card, i) => (
             <div key={i} className="bg-[#1f1b13] p-10 border border-zinc-800/10 flex flex-col justify-between aspect-square lg:aspect-auto">
               <div>
@@ -75,9 +75,19 @@ export default function Support() {
                 <h3 className="font-display text-xl mb-4 tracking-widest uppercase">{card.title}</h3>
                 <p className="text-2xl font-display font-light mb-10">{card.content}</p>
               </div>
-              <button className="text-[10px] uppercase tracking-[0.3em] text-[#f2ca50] border-b border-[#f2ca50] w-fit pb-2 hover:opacity-70 transition-opacity">
-                {card.action}
-              </button>
+              {card.type === 'phone' ? (
+                <a href={`tel:${card.content.replace(/\s/g, '')}`} className="text-[10px] uppercase tracking-[0.3em] text-[#f2ca50] border-b border-[#f2ca50] w-fit pb-2 hover:opacity-70 transition-opacity">
+                  {card.action}
+                </a>
+              ) : card.type === 'email' ? (
+                <a href={`mailto:${card.content}`} className="text-[10px] uppercase tracking-[0.3em] text-[#f2ca50] border-b border-[#f2ca50] w-fit pb-2 hover:opacity-70 transition-opacity">
+                  {card.action}
+                </a>
+              ) : (
+                <button className="text-[10px] uppercase tracking-[0.3em] text-[#f2ca50] border-b border-[#f2ca50] w-fit pb-2 hover:opacity-70 transition-opacity">
+                  {card.action}
+                </button>
+              )}
             </div>
           ))}
         </div>
@@ -121,9 +131,12 @@ export default function Support() {
         <section className="mt-32 py-24 bg-[#110e07] border border-zinc-800/50 flex flex-col items-center text-center px-6">
            <h2 className="font-display text-4xl mb-6">Не нашли ответ?</h2>
            <p className="text-zinc-500 mb-10 max-w-xl">Отправьте нам запрос, и наш технический специалист свяжется с вами в течение часа.</p>
-           <button className="bg-[#f2ca50] text-[#16130b] px-16 py-6 font-display text-[11px] font-bold uppercase tracking-[0.3em] hover:bg-[#d4af37] transition-all">
+           <a 
+             href="mailto:air@zemair.ru"
+             className="bg-[#f2ca50] text-[#16130b] px-16 py-6 font-display text-[11px] font-bold uppercase tracking-[0.3em] hover:bg-[#d4af37] transition-all text-center"
+           >
               СВЯЗАТЬСЯ С ПОДДЕРЖКОЙ
-           </button>
+           </a>
         </section>
       </div>
     </div>
