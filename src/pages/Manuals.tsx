@@ -3,10 +3,10 @@ import { FileText, Download, ShieldCheck, Video } from 'lucide-react';
 
 export default function Manuals() {
   const guides = [
-    { name: "Руководство по установке Monolith", size: "12.4 MB", type: "PDF" },
-    { name: "Инструкция по замене HEPA фильтров", size: "2.1 MB", type: "PDF" },
-    { name: "Настройка Smart Sync и Matter", size: "1.8 MB", type: "PDF" },
-    { name: "Уход за металлическими поверхностями", size: "3.5 MB", type: "PDF" },
+    { name: "Руководство по установке Monolith", size: "12.4 MB", type: "PDF", path: "/docs/installation-guide.pdf" },
+    { name: "Инструкция по замене HEPA фильтров", size: "2.1 MB", type: "PDF", path: "/docs/filter-replacement-guide.pdf" },
+    { name: "Настройка Smart Sync и Matter", size: "1.8 MB", type: "PDF", path: "/docs/smart-home-guide.pdf" },
+    { name: "Уход за металлическими поверхностями", size: "3.5 MB", type: "PDF", path: "/docs/cmf-care-guide.pdf" },
   ];
 
   return (
@@ -35,7 +35,12 @@ export default function Manuals() {
         <div className="space-y-6">
           <h2 className="font-display text-2xl mb-8 opacity-80 uppercase tracking-widest">PDF Документы</h2>
           {guides.map((guide, idx) => (
-            <div key={idx} className="flex justify-between items-center py-6 border-b border-zinc-900 group cursor-pointer hover:px-4 transition-all">
+            <a 
+              key={idx} 
+              href={guide.path} 
+              download 
+              className="flex justify-between items-center py-6 border-b border-zinc-900 group cursor-pointer hover:px-4 transition-all"
+            >
               <div className="flex items-center gap-6">
                 <FileText className="text-zinc-600 group-hover:text-[#f2ca50] transition-colors" size={24} />
                 <div>
@@ -44,7 +49,7 @@ export default function Manuals() {
                 </div>
               </div>
               <Download size={20} className="text-zinc-800 group-hover:text-[#f2ca50] transition-colors" />
-            </div>
+            </a>
           ))}
         </div>
       </div>

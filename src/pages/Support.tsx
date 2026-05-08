@@ -7,9 +7,9 @@ export default function Support() {
     {
       title: "Документация",
       items: [
-        { name: "Руководство пользователя Series Monolith", size: "4.2 MB", type: "PDF" },
-        { name: "Технический паспорт фильтров H13", size: "1.5 MB", type: "PDF" },
-        { name: "Гарантийные обязательства 2024", size: "0.8 MB", type: "PDF" }
+        { name: "Руководство пользователя Series Monolith", size: "12.4 MB", type: "PDF", path: "/docs/installation-guide.pdf" },
+        { name: "Технический паспорт фильтров H13", size: "2.1 MB", type: "PDF", path: "/docs/filter-replacement-guide.pdf" },
+        { name: "Гарантийные обязательства 2024", size: "3.5 MB", type: "PDF", path: "/docs/cmf-care-guide.pdf" }
       ]
     },
     {
@@ -59,16 +59,28 @@ export default function Support() {
               <h2 className="font-display text-3xl mb-12 border-b border-zinc-800 pb-6 tracking-wide">{section.title}</h2>
               <div className="space-y-8">
                 {section.items.map((item, j) => (
-                  <div key={j} className="flex justify-between items-center group cursor-pointer">
-                    <div className="flex gap-4 items-center">
-                      {item.type === 'PDF' ? <FileText size={20} className="text-zinc-600" /> : <ShieldCheck size={20} className="text-[#f2ca50]" />}
-                      <div>
-                        <h4 className="font-sans text-sm font-medium group-hover:text-[#f2ca50] transition-colors">{item.name}</h4>
-                        <span className="text-[10px] uppercase tracking-widest text-zinc-600">{item.size}</span>
+                  item.type === 'PDF' ? (
+                    <a key={j} href={item.path} download className="flex justify-between items-center group cursor-pointer">
+                      <div className="flex gap-4 items-center">
+                        <FileText size={20} className="text-zinc-600 group-hover:text-[#f2ca50] transition-colors" />
+                        <div>
+                          <h4 className="font-sans text-sm font-medium group-hover:text-[#f2ca50] transition-colors">{item.name}</h4>
+                          <span className="text-[10px] uppercase tracking-widest text-zinc-600">{item.size}</span>
+                        </div>
+                      </div>
+                      <Download size={16} className="text-zinc-700 group-hover:text-[#f2ca50] transition-colors" />
+                    </a>
+                  ) : (
+                    <div key={j} className="flex justify-between items-center group cursor-pointer">
+                      <div className="flex gap-4 items-center">
+                        <ShieldCheck size={20} className="text-[#f2ca50]" />
+                        <div>
+                          <h4 className="font-sans text-sm font-medium group-hover:text-[#f2ca50] transition-colors">{item.name}</h4>
+                          <span className="text-[10px] uppercase tracking-widest text-zinc-600">{item.size}</span>
+                        </div>
                       </div>
                     </div>
-                    <Download size={16} className="text-zinc-700 group-hover:text-[#f2ca50] transition-colors" />
-                  </div>
+                  )
                 ))}
               </div>
             </div>
