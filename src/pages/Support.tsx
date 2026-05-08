@@ -8,8 +8,8 @@ export default function Support() {
       title: "Документация",
       items: [
         { name: "Руководство пользователя Series Monolith", size: "12.4 MB", type: "PDF", path: "/docs/installation-guide.pdf" },
-        { name: "Технический паспорт фильтров H13", size: "2.1 MB", type: "PDF", path: "/docs/filter-replacement-guide.pdf" },
-        { name: "Гарантийные обязательства 2024", size: "3.5 MB", type: "PDF", path: "/docs/cmf-care-guide.pdf" }
+        { name: "Технический паспорт фильтров H13", size: "2.5 MB", type: "PDF", path: "/docs/filter-passport.pdf" },
+        { name: "Гарантийные обязательства 2024", size: "1.2 MB", type: "PDF", path: "/docs/warranty.pdf" }
       ]
     },
     {
