@@ -6,6 +6,8 @@ import Catalog from './pages/Catalog';
 import Store from './pages/Store';
 import ProductDetail from './pages/ProductDetail';
 import Technology from './pages/Technology';
+import Installation from './pages/Installation';
+import Intelligence from './pages/Intelligence';
 import AirQuality from './pages/AirQuality';
 import Sustainability from './pages/Sustainability';
 import Support from './pages/Support';
@@ -24,6 +26,8 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/philosophy" element={<Philosophy />} />
           <Route path="/catalog" element={<Catalog />} />
+          <Route path="/installation" element={<Installation />} />
+          <Route path="/intelligence" element={<Intelligence />} />
           <Route path="/store" element={<Store />} />
           <Route path="/catalog/:id" element={<ProductDetail />} />
           <Route path="/technology" element={<Technology />} />

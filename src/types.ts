@@ -24,10 +24,9 @@ export const navLinks: NavLink[] = [
   { name: 'Home', href: '/', path: '/' },
   { name: 'Философия', href: '/philosophy', path: '/philosophy' },
   { name: 'Каталог', href: '/catalog', path: '/catalog' },
-  { name: 'Магазин', href: '/store', path: '/store' },
+  { name: 'Монтаж', href: '/installation', path: '/installation' },
+  { name: 'Интеллект', href: '/intelligence', path: '/intelligence' },
   { name: 'Технологии', href: '/technology', path: '/technology' },
-  { name: 'Качество воздуха', href: '/air-quality', path: '/air-quality' },
-  { name: 'Устойчивое развитие', href: '/sustainability', path: '/sustainability' },
   { name: 'Поддержка', href: '/support', path: '/support' },
 ];
 
