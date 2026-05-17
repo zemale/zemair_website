@@ -115,21 +115,11 @@ export default function Home() {
                           className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity"
                         />
                         <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-white/10 pointer-events-none"></div>
-                        <motion.div 
-                          animate={{ opacity: [0.4, 0.8, 0.4] }}
-                          transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                          className={`absolute top-1/4 left-0 w-full h-[1px] ${item.led} led-glow`}
-                        ></motion.div>
                       </>
                     ) : (
                       <div className={`w-full h-full ${item.color} flex items-center justify-center relative`}>
                          <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-black/40 opacity-50"></div>
                          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-20"></div>
-                         <motion.div 
-                            animate={{ opacity: [0.3, 0.6, 0.3] }}
-                            transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                            className={`absolute top-1/4 left-0 w-full h-[1px] ${item.led} led-glow`}
-                         ></motion.div>
                          <span className="font-display text-8xl opacity-10 font-black italic tracking-tighter">Z</span>
                       </div>
                     )}

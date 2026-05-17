@@ -46,7 +46,7 @@ export default function ProductDetail() {
             transition={{ delay: 0.2 }}
           >
             <span className="font-display text-xs uppercase tracking-[0.3em] text-[#f2ca50] mb-4 block">
-              The Monolith Series
+              The {item.series} Series
             </span>
             <h1 className="font-display text-6xl md:text-8xl mb-4 tracking-tighter uppercase">{item.title}</h1>
             <p className="font-display text-[10px] text-zinc-500 uppercase tracking-[0.5em] mb-12">{item.subtitle}</p>

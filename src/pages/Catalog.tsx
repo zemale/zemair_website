@@ -7,6 +7,8 @@ import { BreezerInterior } from '../components/BreezerInterior';
 
 export default function Catalog() {
   const breezers = catalogItems.filter(i => i.category === 'breezer');
+  const monolithSeries = breezers.filter(i => i.series === 'Monolith');
+  const compactSeries = breezers.filter(i => i.series === 'Compact');
   const components = catalogItems.filter(i => i.category !== 'breezer');
 
   return (
@@ -14,7 +16,7 @@ export default function Catalog() {
       {/* Sub Navigation */}
       <div className="sticky top-[72px] z-40 bg-[#0a0904]/80 backdrop-blur-md border-y border-zinc-900 overflow-x-auto hide-scrollbar">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-center gap-12 whitespace-nowrap">
-           {['СЕРИЯ MONOLITH', 'КАСТОМИЗАЦИЯ', 'ХАРАКТЕРИСТИКИ', 'МАТЕРИАЛЫ'].map(link => (
+           {['СЕРИЯ MONOLITH', 'СЕРИЯ COMPACT', 'КАСТОМИЗАЦИЯ', 'ХАРАКТЕРИСТИКИ'].map(link => (
              <button key={link} className="text-[9px] uppercase tracking-[0.4em] text-zinc-500 hover:text-[#f2ca50] transition-colors">
                {link}
              </button>
@@ -23,12 +25,16 @@ export default function Catalog() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 pt-16">
-        <section className="mb-32 text-center">
-            <span className="text-[10px] uppercase tracking-[0.5em] text-[#f2ca50] mb-8 block font-medium">КАТАЛОГ ПРОДУКЦИИ</span>
-            <h1 className="font-display text-7xl md:text-9xl mb-20 tracking-tight">Серия Monolith</h1>
+        {/* Monolith Section */}
+        <section className="mb-48 text-center" id="monolith">
+            <span className="text-[10px] uppercase tracking-[0.5em] text-[#f2ca50] mb-8 block font-medium font-sans">АРХИТЕКТУРНЫЙ МАСШТАБ</span>
+            <h1 className="font-display text-7xl md:text-9xl mb-12 tracking-tight">Monolith</h1>
+            <p className="text-zinc-500 max-w-2xl mx-auto mb-20 text-sm uppercase tracking-[0.2em] leading-relaxed">
+              Флагманская серия для больших пространств. Сочетание монументального дизайна и максимальной производительности.
+            </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-40">
-              {breezers.map((item, idx) => (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              {monolithSeries.map((item, idx) => (
                 <motion.div
                   key={item.id}
                   initial={{ opacity: 0, y: 30 }}
@@ -47,7 +53,48 @@ export default function Catalog() {
                         className="w-full h-full"
                       />
                       <div className="absolute inset-x-0 bottom-12 text-center pointer-events-none">
-                          <span className="text-[8px] uppercase tracking-[0.5em] text-[#F5F1E6]/40 font-display">ZEMAIR ARCHITECTURAL</span>
+                          <span className="text-[8px] uppercase tracking-[0.5em] text-[#F5F1E6]/40 font-display">ZEMAIR MONOLITH</span>
+                      </div>
+                    </div>
+                    <div className="text-left">
+                      <h3 className="font-display text-4xl mb-2 text-[#F5F1E6] group-hover:text-[#f2ca50] transition-colors">{item.title}</h3>
+                      <p className="font-display text-[9px] text-zinc-500 uppercase tracking-[0.5em]">{item.subtitle}</p>
+                    </div>
+                  </Link>
+                </motion.div>
+              ))}
+            </div>
+        </section>
+
+        {/* Compact Section */}
+        <section className="mb-48 text-center" id="compact">
+            <span className="text-[10px] uppercase tracking-[0.5em] text-[#f2ca50] mb-8 block font-medium font-sans">ИНТЕЛЛЕКТУАЛЬНАЯ КОМПАКТНОСТЬ</span>
+            <h2 className="font-display text-7xl md:text-9xl mb-12 tracking-tight">Compact</h2>
+            <p className="text-zinc-500 max-w-2xl mx-auto mb-20 text-sm uppercase tracking-[0.2em] leading-relaxed">
+              Новая линейка для жилых комнат. Габарит 400х260х132мм. Невидимое присутствие, ощутимый комфорт.
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              {compactSeries.map((item, idx) => (
+                <motion.div
+                  key={item.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: idx * 0.1 }}
+                  className="group"
+                >
+                  <Link to={`/catalog/${item.id}`} className="block">
+                    <div className="aspect-[4/5] relative overflow-hidden bg-zinc-900 border border-zinc-800/20 group-hover:border-zinc-500/30 transition-all duration-700 shadow-2xl mb-12">
+                      <BreezerInterior 
+                        image={item.img || ''} 
+                        type={item.variant || 'black'}
+                        title=""
+                        subtitle=""
+                        className="w-full h-full"
+                      />
+                      <div className="absolute inset-x-0 bottom-8 text-center pointer-events-none">
+                          <span className="text-[8px] uppercase tracking-[0.5em] text-[#F5F1E6]/40 font-display">ZEMAIR COMPACT</span>
                       </div>
                     </div>
                     <div className="text-left">

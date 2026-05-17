@@ -79,27 +79,7 @@ export const BreezerInterior: React.FC<BreezerInteriorProps> = ({
       )}
       {!image && <div className="w-full h-full bg-zinc-900" />}
       
-      {/* CSS Monolith Device */}
-      <motion.div 
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 1, delay: 0.2 }}
-        className={`absolute top-1/2 right-[10%] -translate-y-1/2 w-32 h-44 md:w-48 md:h-64 shadow-2xl ${styles.body} border p-[1px]`}
-      >
-        {/* Metal Texture Overlay */}
-        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-10 pointer-events-none"></div>
-        <div className={`absolute inset-0 ${styles.reflection} pointer-events-none`}></div>
-        
-        {/* LED Strip */}
-        <div className="absolute top-1/4 left-0 w-full flex flex-col gap-[2px]">
-           <div className={`h-[1px] w-full ${styles.led} opacity-80`}></div>
-        </div>
-
-        {/* Brand Marking */}
-        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 font-display text-[6px] md:text-[8px] uppercase tracking-[0.3em] opacity-20 whitespace-nowrap">
-           ZEMAIR
-        </div>
-      </motion.div>
+      {/* Remove the CSS device overlay as we now use photorealistic renders */}
 
       {/* Info Overlay */}
       <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent p-8 md:p-12">
