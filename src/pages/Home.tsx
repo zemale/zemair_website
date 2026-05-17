@@ -12,6 +12,7 @@ import {
   ArrowUpRight 
 } from 'lucide-react';
 import { catalogItems } from '../types';
+import { BreezerInterior } from '../components/BreezerInterior';
 
 export default function Home() {
   return (
@@ -38,12 +39,19 @@ export default function Home() {
               Инженерное совершенство
             </span>
             <h1 className="font-display text-5xl md:text-7xl lg:text-[110px] leading-[0.95] mb-10 font-normal tracking-tight">
-              Архитектура чистого воздуха
+              Архитектура <br /> чистого воздуха
             </h1>
             <p className="font-sans text-[#F5F1E6]/70 text-lg md:text-xl max-w-2xl mb-12 leading-relaxed font-light">
-              ZEMAIR — это не обычный приточный очиститель воздуха с подогревом. Это монолитный элемент интерьера, защищающий вас от пыли, вирусов и аллергенов. Технологическое безмолвие для пространств высшего порядка.
+              ZEMAIR — это не обычный очиститель воздуха. Это монолитный элемент интерьера, защищающий вас от пыли, вирусов и аллергенов. Эстетика невидимости для пространств высшего порядка.
             </p>
             <div className="flex flex-col md:flex-row gap-6 items-start md:items-center">
+              <Link 
+                to="/philosophy"
+                className="bg-transparent border border-[#f2ca50] text-[#f2ca50] px-12 py-5 font-sans text-[10px] font-bold uppercase tracking-[0.25em] hover:bg-[#f2ca50] hover:text-[#16130b] transition-all flex items-center justify-center gap-3 cursor-pointer"
+              >
+                Наша философия
+                <ArrowRight size={14} />
+              </Link>
               <a 
                 href="mailto:air@zemair.ru"
                 className="bg-[#f2ca50] text-[#16130b] px-12 py-5 font-sans text-[10px] font-bold uppercase tracking-[0.25em] hover:bg-[#d4af37] transition-all flex items-center justify-center gap-3 cursor-pointer"
@@ -154,9 +162,12 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="mt-16 text-center">
+        <div className="mt-16 text-center flex flex-col md:flex-row justify-center items-center gap-8">
             <Link to="/catalog" className="font-display text-sm uppercase tracking-[0.2em] border-b border-[#f2ca50] py-2 text-[#f2ca50]">
                 Посмотреть весь каталог
+            </Link>
+            <Link to="/store" className="font-display text-sm uppercase tracking-[0.2em] border-b border-zinc-500 py-2 text-zinc-500 hover:text-white transition-colors">
+                Перейти в интернет-магазин
             </Link>
         </div>
       </section>
@@ -195,6 +206,57 @@ export default function Home() {
               ПОДРОБНЕЕ О ТЕХНОЛОГИЯХ 
               <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Interior Gallery Section */}
+      <section className="py-24 px-6 bg-[#110e07]">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
+            <div className="max-w-2xl">
+              <h2 className="font-sans text-[10px] uppercase tracking-[0.4em] text-[#f2ca50] mb-6 font-semibold">Экстерьер и интерьер</h2>
+              <h3 className="font-display text-4xl md:text-6xl font-normal tracking-tight">Гармония металла и пространства</h3>
+            </div>
+            <p className="text-zinc-500 max-w-sm text-sm font-light leading-relaxed">
+              Монолитный корпус из авиационного алюминия и латуни. Устройство, которое не прячется, а становится центром внимания.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[800px]">
+            <BreezerInterior 
+              image="https://images.unsplash.com/photo-1554995207-c18c2036a2cb?q=80&w=2000&auto=format&fit=crop"
+              type="black"
+              title="Брутальный минимализм в бетоне"
+              subtitle="Monolith Black"
+              className="md:col-span-8 h-[400px] md:h-full"
+            />
+
+            <div className="md:col-span-4 grid grid-cols-1 gap-6">
+              <BreezerInterior 
+                image="https://images.unsplash.com/photo-1618219951462-ebec7f3f4760?q=80&w=1200&auto=format&fit=crop"
+                type="gold"
+                title="Золото и мрамор"
+                subtitle="Satin Brass"
+                className="h-[300px] md:h-full"
+              />
+              <BreezerInterior 
+                image="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop"
+                type="champagne"
+                title="Элеганция в деталях"
+                subtitle="White Gold"
+                className="h-[300px] md:h-full"
+              />
+            </div>
+          </div>
+          
+          <div className="mt-6">
+            <BreezerInterior 
+              image="https://images.unsplash.com/photo-1616489953149-75abde6757d2?q=80&w=2000&auto=format&fit=crop"
+              type="white"
+              title="Чистота линий"
+              subtitle="Pure Gallery White"
+              className="h-[400px]"
+            />
           </div>
         </div>
       </section>

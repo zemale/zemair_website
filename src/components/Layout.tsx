@@ -128,6 +128,10 @@ export default function Layout({ children }: LayoutProps) {
           <LayoutGrid size={20} />
           <span className="text-[8px] uppercase tracking-widest font-display">Каталог</span>
         </Link>
+        <Link to="/store" className="text-[#f2ca50] flex flex-col items-center gap-1 group">
+          <Menu size={20} />
+          <span className="text-[8px] uppercase tracking-widest font-display">Магазин</span>
+        </Link>
         <Link to="/support" className="text-zinc-500 flex flex-col items-center gap-1">
           <Heart size={20} />
           <span className="text-[8px] uppercase tracking-widest font-display">Сервис</span>

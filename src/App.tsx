@@ -1,7 +1,9 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './pages/Home';
+import Philosophy from './pages/Philosophy';
 import Catalog from './pages/Catalog';
+import Store from './pages/Store';
 import ProductDetail from './pages/ProductDetail';
 import Technology from './pages/Technology';
 import AirQuality from './pages/AirQuality';
@@ -20,7 +22,9 @@ export default function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/philosophy" element={<Philosophy />} />
           <Route path="/catalog" element={<Catalog />} />
+          <Route path="/store" element={<Store />} />
           <Route path="/catalog/:id" element={<ProductDetail />} />
           <Route path="/technology" element={<Technology />} />
           <Route path="/air-quality" element={<AirQuality />} />

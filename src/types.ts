@@ -14,11 +14,16 @@ export interface CatalogItem {
   description?: string;
   features?: string[];
   specs?: Record<string, string>;
+  price?: number;
+  category?: 'breezer' | 'filter' | 'accessory';
+  variant?: 'black' | 'gold' | 'white' | 'champagne' | 'copper' | 'silver';
 }
 
 export const navLinks: NavLink[] = [
   { name: 'Home', href: '/', path: '/' },
+  { name: 'Философия', href: '/philosophy', path: '/philosophy' },
   { name: 'Каталог', href: '/catalog', path: '/catalog' },
+  { name: 'Магазин', href: '/store', path: '/store' },
   { name: 'Технологии', href: '/technology', path: '/technology' },
   { name: 'Качество воздуха', href: '/air-quality', path: '/air-quality' },
   { name: 'Устойчивое развитие', href: '/sustainability', path: '/sustainability' },
@@ -32,7 +37,7 @@ export const catalogItems: CatalogItem[] = [
     subtitle: 'Satin Brass Edition', 
     color: 'bg-[#B5A642]', 
     led: 'bg-white/40', 
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAlncURxnYVLdD_TiuNMSKua80ZuXdukVECbXZRbNWHG-2Mfax1ZobWz14P6LlB1S3PuoXrx00-7UCkQqaGgsSfPUjHUzzoCRbMsJ609Tx_i9Ozcn5xezSSSx7Pwu-XNL9ej8fceyImcQ_Pnhbxcuw13wNR5elxa56BgQDRBptPV8WFk6b6OZa08vCyr68gLnBKTw9YkzWLRsvMDf849D9WQ71BvNAnYeYausYgl4D1vcs46BbCtMduNJhScV9rOYFokHMDRdVH-cs',
+    img: '/src/assets/images/brass_gold_monolith_render_1779041650875.png',
     description: 'Изысканная латунь с сатиновой шлифовкой. Сочетание классической роскоши и современных технологий очистки воздуха.',
     features: ['Премиальная отделка', 'Ручная шлифовка', 'H13 HEPA фильтрация'],
     specs: {
@@ -40,7 +45,10 @@ export const catalogItems: CatalogItem[] = [
       'Очистка': 'HEPA H13 + Угольный фильтр',
       'Шум': 'от 18 дБ',
       'Размеры': '120см x 40см x 8см'
-    }
+    },
+    price: 320000,
+    category: 'breezer',
+    variant: 'gold'
   },
   { 
     id: 'white-gold',
@@ -48,14 +56,17 @@ export const catalogItems: CatalogItem[] = [
     subtitle: 'White Gold Finish', 
     color: 'bg-[#F5F1E6]', 
     led: 'bg-[#f2ca50]/40', 
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDbZqBwcMgOAY-CyTwS0XQF2zXSq08cSAgXlXfGSXRo_XoX8tqGZDvzHZb7-1Xrab4YieNDpJaIbx8Ski82eJCCESIJQBhgdO6_KbpuFVtuem0TfeRFGg_p6xTZ8_bBiudfPT-5fiejBMNf5rOZ5TVbkJyIcc6iUVOl3jbhpQnHcxUS6GgfVYXi0KK4b5fbTqGA3JF8PDmCJCXdB5518e0bdPU8vdOjY_d1dhX0vdITYSeJ5ov7EYZCqxdcRBkSo3aiadXntC14ghE',
+    img: '/src/assets/images/champagne_gold_monolith_render_1779041667292.png',
     description: 'Белое золото — выбор для светлых, воздушных интерьеров. Деликатный оттенок, который меняется в зависимости от освещения.',
     features: ['Жемчужный отблеск', 'Умная LED индикация', 'Адаптивный режим'],
     specs: {
       'Материал': 'Анодированный алюминий с напылением',
       'Очистка': 'HEPA H13',
       'Шум': 'от 18 дБ'
-    }
+    },
+    price: 280000,
+    category: 'breezer',
+    variant: 'champagne'
   },
   { 
     id: 'matte-black',
@@ -63,9 +74,12 @@ export const catalogItems: CatalogItem[] = [
     subtitle: 'Matte Black Anodized', 
     color: 'bg-[#1A1A1B]', 
     led: 'bg-[#007AFF]/60', 
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDVqVFHHPLQbQnh_w26nsfr3wVGJvjh7Nt0y6qmC2ZERHOVdFaGc8INK60zqM6ACKVuT_KlEDhSBXCuYD-GadUvMCNkYtY-L-8JozbZ6JVxsJaHI93IDZZrfw-Ya06R1Gj-yJXU3kGbDqWBJYbLT-AvO8biTZkNhxoQOboZTAU_tfzE284nDUKujGH_Jm0qxcPyUdvHpOT9QJSTf3IYd-aFlpWS8i5HIFkietPEn2iC4nVG8EZDcimTg7Zmb_dpPWYojd3zpTvwlTA',
+    img: '/src/assets/images/matte_black_monolith_render_1779041630864.png',
     description: 'Матовый черный — воплощение технологического минимализма. Скрытая мощь в безупречном корпусе.',
-    features: ['Глубокий матовый финиш', 'Smart Sync технология', 'Бесшумный ночной режим']
+    features: ['Глубокий матовый финиш', 'Smart Sync технология', 'Бесшумный ночной режим'],
+    price: 240000,
+    category: 'breezer',
+    variant: 'black'
   },
   { 
     id: 'metallic-grey',
@@ -73,7 +87,10 @@ export const catalogItems: CatalogItem[] = [
     subtitle: 'Architectural Silver', 
     color: 'bg-[#8E8E93]', 
     led: 'bg-white/60', 
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCm4NKCErNPS1fCM3kSP3FUnyeghGPyM4mXbXOkFyp-KiSgs0AhFAgIOCgDJv2XL3Bfkqe1vng3t_-GVkDTnVKQ_FJ0S3A6GjkmIP-Dgz_9mJjQWG8fPn2Glq1zlv6p1gC0OvpOKfrhTo11MPntDjuzg3JSLMn5aKIAHl2jwCrJkvtJoKNAT_aqayYJLEhGwLMsulDjrpZFj8u0PmTgUzdz6rUu-i0R-kd4VVSVYXfhVSeWdQ2IMfgY2RN2XOzJzKIWDSJg5AJghvk' 
+    img: '/src/assets/images/metallic_silver_monolith_render_1779042256485.png',
+    price: 220000,
+    category: 'breezer',
+    variant: 'silver'
   },
   { 
     id: 'pure-white',
@@ -81,7 +98,10 @@ export const catalogItems: CatalogItem[] = [
     subtitle: 'Pure Gallery White', 
     color: 'bg-[#FAFAFA]', 
     led: 'bg-[#f2ca50]/40', 
-    img: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBDUe7OV6_wkNWV9MS-_5JIaiQvyOMyVjTJtZEVGyNXqzEhKZ4ek1HO-rIJFjLvpy7eIve1utelsO5bgMCA7YNLPKsR0hjWQLZ23jNPsc3rVrr4bMDZexQwD_ihRg9XqXVipj2n9mQdZF5iQcfH-6e8vZDagM0kpKtjvFI-stAktaMerGakra5myXq9jlOM0Nj4a53JDeAp19t0TYpcORYjkZZOQ7xETn4NLf4KVr8r0La1W8dxWq-nqVkD5d-m0R7xPeDTtXkU_Yc' 
+    img: '/src/assets/images/pure_white_monolith_render_1779041682758.png',
+    price: 200000,
+    category: 'breezer',
+    variant: 'white'
   },
   { 
     id: 'brushed-copper',
@@ -89,13 +109,38 @@ export const catalogItems: CatalogItem[] = [
     subtitle: 'Copper Limited Edition', 
     color: 'bg-[#B87333]', 
     led: 'bg-[#ff7700]/60', 
-    img: null,
+    img: '/src/assets/images/rose_gold_copper_monolith_render_1779042223317.png',
     description: 'Теплый оттенок меди с глубокой горизонтальной шлифовкой. Ограниченная серия для интерьеров с характером.',
     features: ['Натуральная медь', 'Антибактериальная поверхность', 'Уникальный рисунок шлифовки'],
     specs: {
       'Материал': 'Медь M1',
       'Очистка': 'HEPA H13 + Carbon',
       'Шум': 'от 18 дБ'
-    }
+    },
+    price: 350000,
+    category: 'breezer',
+    variant: 'copper'
   },
+  {
+    id: 'filter-set-h13',
+    title: 'Комплект фильтров H13',
+    subtitle: 'HEPA + Carbon',
+    color: 'bg-zinc-800',
+    led: 'bg-white/20',
+    img: 'https://images.unsplash.com/photo-1585776245991-cf89dd7fc53e?q=80&w=800&auto=format&fit=crop',
+    description: 'Полный комплект для ежегодной замены. Включает HEPA H13 фильтр и угольный адсорбент.',
+    price: 12000,
+    category: 'filter'
+  },
+    {
+    id: 'smart-sensor-co2',
+    title: 'Smart Sensor Pro',
+    subtitle: 'PM2.5 / CO2 / TVOC',
+    color: 'bg-zinc-900',
+    led: 'bg-[#00ffcc]/60',
+    img: 'https://images.unsplash.com/photo-1558002038-103792e0975d?q=80&w=800&auto=format&fit=crop',
+    description: 'Выносной датчик для максимально точного контроля качества воздуха в любой точке помещения.',
+    price: 18000,
+    category: 'accessory'
+  }
 ];

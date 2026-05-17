@@ -1,8 +1,9 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowLeft, ShieldCheck, Zap, Wind, ArrowRight } from 'lucide-react';
+import { ArrowLeft, ShieldCheck, Zap, Wind, ArrowRight, ShoppingCart } from 'lucide-react';
 import { catalogItems } from '../types';
+import { BreezerInterior } from '../components/BreezerInterior';
 
 export default function ProductDetail() {
   const { id } = useParams();
@@ -24,34 +25,16 @@ export default function ProductDetail() {
             animate={{ opacity: 1, x: 0 }}
             className="sticky top-32"
           >
-            <div className="bg-[#1f1b13] p-6 md:p-12 aspect-[1/1.5] relative flex items-center justify-center overflow-hidden border border-zinc-800/20 shadow-2xl">
-              <div className="relative w-full h-full">
-                {item.img ? (
-                  <>
-                    <img 
-                      src={item.img} 
-                      alt={item.title} 
-                      className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-tr from-black/40 via-transparent to-white/10 pointer-events-none"></div>
-                    <motion.div 
-                      animate={{ opacity: [0.4, 0.8, 0.4] }}
-                      transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                      className={`absolute top-1/4 left-0 w-full h-[1px] ${item.led} led-glow`}
-                    ></motion.div>
-                  </>
-                ) : (
-                  <div className={`w-full h-full ${item.color} flex items-center justify-center relative`}>
-                     <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-black/40 opacity-50"></div>
-                     <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/brushed-alum.png')] opacity-20"></div>
-                     <motion.div 
-                        animate={{ opacity: [0.3, 0.6, 0.3] }}
-                        transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
-                        className={`absolute top-1/4 left-0 w-full h-[1px] ${item.led} led-glow`}
-                     ></motion.div>
-                     <span className="font-display text-[200px] opacity-10 font-black italic tracking-tighter">Z</span>
-                  </div>
-                )}
+            <div className="aspect-[1/1.5] relative overflow-hidden bg-zinc-900 border border-zinc-800/20 shadow-2xl">
+              <BreezerInterior 
+                image={item.img || ''} 
+                type={item.variant || 'black'}
+                title=""
+                subtitle=""
+                className="w-full h-full"
+              />
+              <div className="absolute top-12 left-12">
+                  <span className="text-[10px] uppercase tracking-[0.5em] text-[#f2ca50]/40 font-display">ZEMAIR ARCHITECTURAL EDITION</span>
               </div>
             </div>
           </motion.div>
@@ -63,9 +46,15 @@ export default function ProductDetail() {
             transition={{ delay: 0.2 }}
           >
             <span className="font-display text-xs uppercase tracking-[0.3em] text-[#f2ca50] mb-4 block">
-              Серия Monolith
+              The Monolith Series
             </span>
-            <h1 className="font-display text-6xl mb-8 tracking-tight">{item.title}</h1>
+            <h1 className="font-display text-6xl md:text-8xl mb-4 tracking-tighter uppercase">{item.title}</h1>
+            <p className="font-display text-[10px] text-zinc-500 uppercase tracking-[0.5em] mb-12">{item.subtitle}</p>
+            
+            <div className="mb-12">
+               <span className="text-4xl font-display text-[#f2ca50]">{item.price?.toLocaleString()} ₽</span>
+               <span className="ml-4 text-zinc-600 text-[10px] uppercase tracking-widest font-light">В НАЛИЧИИ В БУТИКЕ</span>
+            </div>
             <p className="text-zinc-400 text-xl leading-relaxed mb-12">
               {item.description || "Совершенство формы и функции. Этот монолитный очиститель воздуха разработан для самых взыскательных интерьеров."}
             </p>
@@ -99,12 +88,21 @@ export default function ProductDetail() {
               </div>
             )}
 
-            <a 
-              href="mailto:air@zemair.ru"
-              className="inline-block w-full bg-[#f2ca50] text-[#16130b] py-6 font-display text-[11px] font-bold uppercase tracking-[0.3em] hover:bg-[#d4af37] transition-all transform hover:-translate-y-1 cursor-pointer text-center"
-            >
-              ОФОРМИТЬ ПРЕДЗАКАЗ
-            </a>
+            <div className="flex flex-col gap-4">
+              <Link 
+                to="/store"
+                className="flex items-center justify-center gap-3 w-full bg-[#f2ca50] text-[#16130b] py-6 font-display text-[11px] font-bold uppercase tracking-[0.3em] hover:bg-white transition-all transform hover:-translate-y-1"
+              >
+                КУПИТЬ В БУТИКЕ
+                <ShoppingCart size={16} />
+              </Link>
+              <a 
+                href="mailto:air@zemair.ru"
+                className="inline-block w-full border border-zinc-800 text-zinc-500 py-6 font-display text-[11px] font-bold uppercase tracking-[0.2em] hover:border-[#f2ca50] hover:text-[#f2ca50] transition-all text-center"
+              >
+                ЗАКАЗАТЬ КАСТОМИЗАЦИЮ
+              </a>
+            </div>
           </motion.div>
         </div>
       </div>
