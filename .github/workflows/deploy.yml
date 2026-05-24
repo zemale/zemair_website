@@ -1,0 +1,70 @@
+name: Deploy to nichost FTP
+
+on:
+  push:
+    branches: [master, main]
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-zemair
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      # AI Studio периодически удаляет verification-файлы как «outdated».
+      # Регенерируем их прямо в dist/ — на проде они будут при любом раскладе.
+      - name: Inject SEO verification files
+        run: |
+          cat > dist/yandex_2b1cbcf41d8fabad.html <<'EOF'
+          <html>
+              <head>
+                  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+              </head>
+              <body>Verification: 2b1cbcf41d8fabad</body>
+          </html>
+          EOF
+          cat > dist/google7a266ca7df8dc492.html <<'EOF'
+          google-site-verification: google7a266ca7df8dc492.html
+          EOF
+          ls -la dist/yandex_*.html dist/google*.html
+
+      - name: Install lftp
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+
+      - name: Deploy via lftp
+        env:
+          FTP_SERVER: ${{ secrets.FTP_SERVER }}
+          FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        run: |
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_SERVER" <<'EOF'
+            set ftp:ssl-allow no
+            set ftp:passive-mode on
+            set net:max-retries 5
+            set net:reconnect-interval-base 5
+            set net:timeout 30
+            set mirror:parallel-transfer-count 1
+            mirror -R --delete --verbose --ignore-time --parallel=1 ./dist /
+            # Force-upload index.html: lftp mirror пропускает его если совпал size,
+            # а у Vite-сборки имя index.html постоянное и размер часто не меняется.
+            rm -f /index.html
+            put dist/index.html -o /index.html
+            bye
+          EOF
