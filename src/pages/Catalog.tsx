@@ -152,9 +152,10 @@ export default function Catalog() {
             </div>
             <div className="aspect-[4/5] bg-zinc-900/50 relative overflow-hidden group">
                <img 
-                 src="https://images.unsplash.com/photo-1618219951462-ebec7f3f4760?q=80&w=2000&auto=format&fit=crop"
+                 src="/assets/images/bespoke_finishes_catalog_1779647491184.png"
                  alt="Custom finishes"
                  className="w-full h-full object-cover grayscale opacity-50 group-hover:opacity-100 group-hover:grayscale-0 transition-all duration-1000"
+                 referrerPolicy="no-referrer"
                />
                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0904] to-transparent" />
             </div>

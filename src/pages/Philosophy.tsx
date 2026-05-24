@@ -28,9 +28,10 @@ export default function Philosophy() {
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden px-6">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=2000&auto=format&fit=crop" 
-            className="w-full h-full object-cover opacity-30 grayscale"
-            alt="ZEMAIR Philosophy"
+            src="/assets/images/philosophy_hero_bg_1779647053587.png" 
+            className="w-full h-full object-cover opacity-35 grayscale"
+            alt="ZEMAIR Philosophy background"
+            referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0904]/50 to-[#0a0904]"></div>
         </div>
@@ -73,19 +74,20 @@ export default function Philosophy() {
                 Мы начали с простого вопроса: почему техника, отвечающая за наше здоровье, выглядит как дешевый пластик?
               </p>
               <p>
-                В ZEMAIR мы пересмотрели роль очистителя воздуха. Для нас это не прибор, это <span className="text-[#F5F1E6] font-normal italic">монолит</span>. Это часть стены, часть вашего выбора в пользу архитектурной честности.
+                В ZEMAIR мы пересмотрели роль очистителя воздуха. Для нас это не прибор, это <span className="text-[#F5F1E6] font-normal italic">монолит</span>. Это гармоничная часть вашей стены, размещаемая на внешней стороне здания рядом с окном для прямого забора и деликатной фильтрации уличного воздуха.
               </p>
               <p>
-                Мы используем только благородные металлы: анодированный алюминий, медь, латунь. Мы верим в тактильность и вечность материалов.
+                Мы используем только благородные металлы: анодированный алюминий, медь, архитектурную латунь. Мы верим в тактильность и вечность натуральных материалов.
               </p>
             </div>
           </div>
           <div className="relative aspect-square">
             <div className="absolute inset-0 border border-[#f2ca50]/20 translate-x-6 translate-y-6"></div>
             <img 
-               src="https://images.unsplash.com/photo-1554995207-c18c2036a2cb?q=80&w=1200&auto=format&fit=crop"
-               className="w-full h-full object-cover grayscale brightness-75 relative z-10"
-               alt="Philosophy Visual"
+               src="/assets/images/philosophy_visual_1779647034691.png"
+               className="w-full h-full object-cover grayscale brightness-75 relative z-10 hover:grayscale-0 transition-all duration-700"
+               alt="ZEMAIR Philosophy architectural integration"
+               referrerPolicy="no-referrer"
             />
           </div>
         </div>

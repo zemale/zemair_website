@@ -47,15 +47,15 @@ export default function Installation() {
         {/* Requirements Section */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 mb-32 items-center">
             <div className="relative aspect-[4/5] bg-zinc-900 border border-zinc-800/50 overflow-hidden group">
-                {/* Placeholder Image */}
-                <div className="absolute inset-0 bg-gradient-to-br from-zinc-800 to-zinc-900 flex items-center justify-center p-20">
-                     <span className="text-[10px] uppercase tracking-[0.5em] text-[#f2ca50]/20 font-display text-center">
-                        RENDER: TECHNICAL CROSS-SECTION OF WALL INSTALLATION
-                     </span>
-                </div>
+                <img
+                  src="/assets/images/install_section_1779641035928.png"
+                  alt="ZEMAIR technical wall installation cross-section"
+                  className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+                  referrerPolicy="no-referrer"
+                />
                 {/* Visual Indicators */}
-                <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[132px] h-[132px] rounded-full border-2 border-dashed border-[#f2ca50]/40 flex items-center justify-center">
-                    <span className="text-[10px] font-mono text-[#f2ca50]">Ø 132mm</span>
+                <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[132px] h-[132px] rounded-full border-2 border-dashed border-[#f2ca50]/60 bg-black/40 backdrop-blur-sm flex items-center justify-center">
+                    <span className="text-xs font-mono font-medium text-[#f2ca50] tracking-wider">Ø 132mm</span>
                 </div>
             </div>
             <div>
@@ -114,19 +114,22 @@ export default function Installation() {
                         Скачать тех-карту монтажа
                     </a>
                  </div>
-                 <div className="aspect-video bg-zinc-900 border border-zinc-800/50 flex items-center justify-center relative overflow-hidden">
-                    <span className="text-[10px] uppercase tracking-[0.5em] text-[#f2ca50]/20 font-display text-center p-8">
-                        RENDER: EXTERIOR FAÇADE WITH DISCREET VENT GRILL
-                    </span>
+                 <div className="aspect-video bg-zinc-900 border border-zinc-800/50 relative overflow-hidden group">
+                    <img
+                      src="/assets/images/exterior_grill_1779641053470.png"
+                      alt="Discreet external vent grill"
+                      className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
+                      referrerPolicy="no-referrer"
+                    />
                     <motion.div 
                         animate={{ 
-                            opacity: [0.2, 0.5, 0.2],
+                            opacity: [0.5, 0.9, 0.5],
                         }}
                         transition={{ repeat: Infinity, duration: 4 }}
-                        className="absolute bottom-10 right-10 flex items-center gap-4"
+                        className="absolute bottom-6 right-6 flex items-center gap-2 bg-black/60 px-4 py-2 border border-zinc-800 backdrop-blur-md"
                     >
-                        <Wind size={16} className="text-[#f2ca50]" />
-                        <span className="text-[8px] uppercase tracking-widest text-zinc-500">Silent Airflow</span>
+                        <Wind size={14} className="text-[#f2ca50]" />
+                        <span className="text-[8px] uppercase tracking-widest text-[#F5F1E6]">Silent Airflow</span>
                     </motion.div>
                  </div>
             </div>

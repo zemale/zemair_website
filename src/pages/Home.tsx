@@ -167,9 +167,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 border border-zinc-800/50">
           <div className="md:col-span-7 relative h-[400px] md:h-auto overflow-hidden">
              <img 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJ9pWhkgzgat8xjB0-1F0EGfx-dby_XPEVkXQo_g0WOUAduBzAYposqus12tRepacDx_TDhgPGkfWLL3fIhXZVBw5oC8jB0JUFunKXeA7pGMxIphZxdgenHcxMUYhhsGcZ6Ayed2E8TWFIH3qOFjDrk5g0SIw7KFPbeFcpp__7CioPEB03n3lu-M113rpIDlh_PboZOqpVvSKZ5BbLVZ8GjSw6OB3tOHUEE-CKUP7lKU7TLErz19QII4ExozK7bMDiAhRYrI0WDLY"
+              src="/assets/images/customization_hero_home_1779647510561.png"
               alt="Customization"
-              className="w-full h-full object-cover grayscale brightness-50 contrast-125"
+              className="w-full h-full object-cover grayscale brightness-50 contrast-125 hover:grayscale-0 transition-all duration-1000"
+              referrerPolicy="no-referrer"
              />
              <div className="absolute inset-0 bg-gradient-to-r from-[#16130b] to-transparent hidden md:block"></div>
           </div>
@@ -214,7 +215,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[800px]">
             <BreezerInterior 
-              image="https://images.unsplash.com/photo-1554995207-c18c2036a2cb?q=80&w=2000&auto=format&fit=crop"
+              image="/assets/images/monolith_black_interior_1779644908409.png"
               type="black"
               title="Брутальный минимализм в бетоне"
               subtitle="Monolith Black"
@@ -223,16 +224,16 @@ export default function Home() {
 
             <div className="md:col-span-4 grid grid-cols-1 gap-6">
               <BreezerInterior 
-                image="https://images.unsplash.com/photo-1618219951462-ebec7f3f4760?q=80&w=1200&auto=format&fit=crop"
+                image="/assets/images/monolith_gold_interior_1779644935188.png"
                 type="gold"
                 title="Золото и мрамор"
                 subtitle="Satin Brass"
                 className="h-[300px] md:h-full"
               />
               <BreezerInterior 
-                image="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1200&auto=format&fit=crop"
+                image="/assets/images/monolith_champagne_interior_1779644954155.png"
                 type="champagne"
-                title="Элеганция в деталях"
+                title="Элегантность в деталях"
                 subtitle="White Gold"
                 className="h-[300px] md:h-full"
               />
@@ -241,7 +242,7 @@ export default function Home() {
           
           <div className="mt-6">
             <BreezerInterior 
-              image="https://images.unsplash.com/photo-1616489953149-75abde6757d2?q=80&w=2000&auto=format&fit=crop"
+              image="/assets/images/monolith_white_interior_1779644974590.png"
               type="white"
               title="Чистота линий"
               subtitle="Pure Gallery White"

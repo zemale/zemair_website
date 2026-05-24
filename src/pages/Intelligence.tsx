@@ -51,16 +51,19 @@ export default function Intelligence() {
                 <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#f2ca50_1px,transparent_1px)] [background-size:40px_40px]"></div>
                 
                 <div className="relative z-10 flex gap-20 items-center">
-                    {/* Phone Placeholder */}
+                    {/* Phone Mockup with real image */}
                     <motion.div 
                         initial={{ y: 50, opacity: 0 }}
                         whileInView={{ y: 0, opacity: 1 }}
-                        className="w-64 h-[500px] bg-black border-[6px] border-zinc-800 rounded-[3rem] shadow-2xl flex items-center justify-center p-4 overflow-hidden relative"
+                        className="w-64 h-[500px] bg-black border-[6px] border-zinc-800 rounded-[3rem] shadow-2xl overflow-hidden relative group"
                     >
-                         <span className="text-[10px] uppercase tracking-[0.3em] text-[#f2ca50]/20 font-display text-center">
-                            APP INTERFACE RENDER
-                         </span>
-                         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-zinc-800/20 to-transparent"></div>
+                         <img
+                           src="/assets/images/zemair_app_1779641069686.png"
+                           alt="ZEMAIR Smart App interface mockup"
+                           className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+                           referrerPolicy="no-referrer"
+                         />
+                         <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-black/60 to-transparent pointer-events-none"></div>
                     </motion.div>
 
                     <div className="hidden lg:block space-y-8 max-w-md">
@@ -105,11 +108,14 @@ export default function Intelligence() {
             ></motion.div>
             
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
-                <div className="relative aspect-square bg-zinc-900 overflow-hidden border border-zinc-800/30 flex items-center justify-center">
-                    <span className="text-[10px] uppercase tracking-[0.5em] text-[#f2ca50]/20 font-display text-center">
-                        RENDER: CLOSE-UP OF THE AI NEURAL SENSOR CHIP
-                    </span>
-                    <Activity size={200} strokeWidth={0.5} className="absolute text-[#f2ca50]/5" />
+                <div className="relative aspect-square bg-zinc-900 overflow-hidden border border-zinc-800/30 group">
+                    <img
+                      src="/assets/images/neural_chip_1779641085343.png"
+                      alt="ZEMAIR AI Neural Sensor Chip close-up"
+                      className="w-full h-full object-cover opacity-75 group-hover:opacity-100 transition-opacity duration-700"
+                      referrerPolicy="no-referrer"
+                    />
+                    <Activity size={200} strokeWidth={0.5} className="absolute inset-0 m-auto text-[#f2ca50]/5 pointer-events-none" />
                 </div>
                 <div>
                    <span className="font-mono text-[10px] text-[#f2ca50] mb-4 block uppercase tracking-widest">Processing Data...</span>
