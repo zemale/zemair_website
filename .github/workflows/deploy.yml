@@ -62,6 +62,9 @@ jobs:
             set net:timeout 30
             set mirror:parallel-transfer-count 1
             mirror -R --delete --verbose --ignore-time --parallel=1 ./dist /
+            # Ensure assets/images subdirectory exists and is uploaded
+            mkdir -p /assets/images
+            mirror -R --verbose --ignore-time --parallel=1 ./dist/assets/images /assets/images
             # Force-upload key files: lftp mirror пропускает если совпал size
             rm -f /index.html
             put dist/index.html -o /index.html
