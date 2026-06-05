@@ -58,7 +58,7 @@ jobs:
           echo "JS: $JS_FILE"
           
           # Upload main files
-          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_SERVER" -e "set ftp:ssl-allow no; set ftp:passive-mode on; rm -f /index.html; put dist/index.html -o /index.html; put dist/favicon.svg -o /favicon.svg; put dist/logo.svg -o /logo.svg; put dist/robots.txt -o /robots.txt; put dist/sitemap.xml -o /sitemap.xml; put dist/zemair_installation_card.pdf -o /zemair_installation_card.pdf; put dist/og-image.jpg -o /og-image.jpg; rm -f /assets/$CSS_FILE; put dist/$CSS_FILE -o /assets/$CSS_FILE; rm -f /assets/$JS_FILE; put dist/$JS_FILE -o /assets/$JS_FILE; bye"
+          lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_SERVER" -e "set ftp:ssl-allow no; set ftp:passive-mode on; rm -f /index.html; put dist/index.html -o /index.html; put dist/favicon.svg -o /favicon.svg; put dist/logo.svg -o /logo.svg; put dist/robots.txt -o /robots.txt; put dist/sitemap.xml -o /sitemap.xml; put dist/zemair_installation_card.pdf -o /zemair_installation_card.pdf; put dist/og-image.jpg -o /og-image.jpg; rm -f /assets/$CSS_FILE; put dist/assets/$CSS_FILE -o /assets/$CSS_FILE; rm -f /assets/$JS_FILE; put dist/assets/$JS_FILE -o /assets/$JS_FILE; bye"
           
           # Upload images one by one
           for f in dist/assets/images/*; do
