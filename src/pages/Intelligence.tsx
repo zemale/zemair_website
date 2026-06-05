@@ -58,7 +58,7 @@ export default function Intelligence() {
                         className="w-64 h-[500px] bg-black border-[6px] border-zinc-800 rounded-[3rem] shadow-2xl overflow-hidden relative group"
                     >
                          <img
-                           src="/assets/images/zemair_app_1779641069686.png"
+                           src="/assets/zemair_app_1779641069686.png"
                            alt="ZEMAIR Smart App interface mockup"
                            className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-500"
                            referrerPolicy="no-referrer"
@@ -110,7 +110,7 @@ export default function Intelligence() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
                 <div className="relative aspect-square bg-zinc-900 overflow-hidden border border-zinc-800/30 group">
                     <img
-                      src="/assets/images/neural_chip_1779641085343.png"
+                      src="/assets/neural_chip_1779641085343.png"
                       alt="ZEMAIR AI Neural Sensor Chip close-up"
                       className="w-full h-full object-cover opacity-75 group-hover:opacity-100 transition-opacity duration-700"
                       referrerPolicy="no-referrer"

@@ -75,12 +75,10 @@ jobs:
           echo "put dist/og-image.jpg -o /og-image.jpg" >> /tmp/lftp_script.txt
           echo "put dist/$CSS_FILE -o /assets/$CSS_FILE" >> /tmp/lftp_script.txt
           echo "put dist/$JS_FILE -o /assets/$JS_FILE" >> /tmp/lftp_script.txt
-          echo "mkdir -p /assets/images" >> /tmp/lftp_script.txt
-          
-          # Add image uploads
+          # Add image uploads (to /assets/ root to avoid subdirectory issues)
           for f in dist/assets/images/*; do
             basename=$(basename "$f")
-            echo "put $f -o /assets/images/$basename" >> /tmp/lftp_script.txt
+            echo "put $f -o /assets/$basename" >> /tmp/lftp_script.txt
           done
           
           echo "bye" >> /tmp/lftp_script.txt

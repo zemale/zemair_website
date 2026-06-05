@@ -37,7 +37,7 @@ export const catalogItems: CatalogItem[] = [
     subtitle: 'Satin Brass Edition', 
     color: 'bg-[#B5A642]', 
     led: 'bg-white/40', 
-    img: '/assets/images/brass_gold_monolith_render_1779041650875.png',
+    img: '/assets/brass_gold_monolith_render_1779041650875.png',
     description: 'Изысканная латунь с сатиновой шлифовкой. Сочетание классической роскоши и современных технологий очистки воздуха.',
     features: ['Премиальная отделка', 'Ручная шлифовка', 'H13 HEPA фильтрация'],
     specs: {
@@ -57,7 +57,7 @@ export const catalogItems: CatalogItem[] = [
     subtitle: 'White Gold Finish', 
     color: 'bg-[#F5F1E6]', 
     led: 'bg-[#f2ca50]/40', 
-    img: '/assets/images/champagne_gold_monolith_render_1779041667292.png',
+    img: '/assets/champagne_gold_monolith_render_1779041667292.png',
     description: 'Белое золото — выбор для светлых, воздушных интерьеров. Деликатный оттенок, который меняется в зависимости от освещения.',
     features: ['Жемчужный отблеск', 'Умная LED индикация', 'Адаптивный режим'],
     specs: {
@@ -77,7 +77,7 @@ export const catalogItems: CatalogItem[] = [
     subtitle: 'Matte Black Anodized', 
     color: 'bg-[#1A1A1B]', 
     led: 'bg-[#007AFF]/60', 
-    img: '/assets/images/matte_black_monolith_render_1779041630864.png',
+    img: '/assets/matte_black_monolith_render_1779041630864.png',
     description: 'Матовый черный — воплощение технологического минимализма. Скрытая мощь в безупречном корпусе.',
     features: ['Глубокий матовый финиш', 'Smart Sync технология', 'Бесшумный ночной режим'],
     specs: {
@@ -96,7 +96,7 @@ export const catalogItems: CatalogItem[] = [
     subtitle: 'Architectural Silver', 
     color: 'bg-[#8E8E93]', 
     led: 'bg-white/60', 
-    img: '/assets/images/metallic_silver_monolith_render_1779042256485.png',
+    img: '/assets/metallic_silver_monolith_render_1779042256485.png',
     specs: {
       'Размеры': '1200 x 400 x 80 мм'
     },
@@ -111,7 +111,7 @@ export const catalogItems: CatalogItem[] = [
     subtitle: 'Pure Gallery White', 
     color: 'bg-[#FAFAFA]', 
     led: 'bg-[#f2ca50]/40', 
-    img: '/assets/images/pure_white_monolith_render_1779041682758.png',
+    img: '/assets/pure_white_monolith_render_1779041682758.png',
     specs: {
       'Размеры': '1200 x 400 x 80 мм'
     },
@@ -126,7 +126,7 @@ export const catalogItems: CatalogItem[] = [
     subtitle: 'Copper Limited Edition', 
     color: 'bg-[#B87333]', 
     led: 'bg-[#ff7700]/60', 
-    img: '/assets/images/rose_gold_copper_monolith_render_1779042223317.png',
+    img: '/assets/rose_gold_copper_monolith_render_1779042223317.png',
     description: 'Теплый оттенок меди с глубокой горизонтальной шлифовкой. Ограниченная серия для интерьеров с характером.',
     features: ['Натуральная медь', 'Антибактериальная поверхность', 'Уникальный рисунок шлифовки'],
     specs: {
@@ -146,7 +146,7 @@ export const catalogItems: CatalogItem[] = [
     subtitle: 'City Loft Series', 
     color: 'bg-[#1A1A1B]', 
     led: 'bg-[#007AFF]/60', 
-    img: '/assets/images/compact_black_premium_1779645909564.png',
+    img: '/assets/compact_black_premium_1779645909564.png',
     description: 'Бескомпромиссный архитектурный минимализм в компактном исполнении. Глубокий анодированный металл и скрытая технологическая безупречность.',
     features: ['Компактный масштаб', 'Бесшумное дыхание', 'Система интеллектуального климат-контроля'],
     specs: {
@@ -166,7 +166,7 @@ export const catalogItems: CatalogItem[] = [
     subtitle: 'Minimalist Series', 
     color: 'bg-[#FAFAFA]', 
     led: 'bg-[#f2ca50]/40', 
-    img: '/assets/images/compact_white_premium_1779645929566.png',
+    img: '/assets/compact_white_premium_1779645929566.png',
     description: 'Чистота архитектурного жеста и деликатность матовых поверхностей. Идеальное слияние с безупречным галерейным пространством.',
     features: ['Малый габарит', 'Медицинский стандарт очистки', 'Интеллектуальный подогрев'],
     specs: {
@@ -186,7 +186,7 @@ export const catalogItems: CatalogItem[] = [
     subtitle: 'Tech Grey Series', 
     color: 'bg-[#8E8E93]', 
     led: 'bg-white/60', 
-    img: '/assets/images/compact_silver_premium_1779645947147.png',
+    img: '/assets/compact_silver_premium_1779645947147.png',
     description: 'Индустриальное изящество авиационного алюминия. Тончайшая шлифовка граней подчеркивает суверенность геометрических линий.',
     features: ['Авиационный алюминиевый моноблок', 'Управление через приложение', 'Стильный лазерный LED-индикатор'],
     specs: {
@@ -206,7 +206,7 @@ export const catalogItems: CatalogItem[] = [
     subtitle: 'Satin Brass Edition', 
     color: 'bg-[#B5A642]', 
     led: 'bg-white/40', 
-    img: '/assets/images/compact_gold_premium_1779645965169.png',
+    img: '/assets/compact_gold_premium_1779645965169.png',
     description: 'Подлинная архитектурная латунь художественной шлифовки для изысканного интерьерного ансамбля. Синергия вечной классики и чистого воздуха.',
     features: ['Отделка премиальной латунью', 'Ручная доводка шлифовки', 'Интеллектуальный клима-контроль'],
     specs: {
@@ -226,7 +226,7 @@ export const catalogItems: CatalogItem[] = [
     subtitle: 'HEPA H13 + Carbon Active',
     color: 'bg-zinc-800',
     led: 'bg-white/20',
-    img: '/assets/images/filter_set_h13_1779646621670.png',
+    img: '/assets/filter_set_h13_1779646621670.png',
     description: 'Двухступенчатый сменный блок сверхглубокой очистки. Бескомпромиссная связка пыльцевого барьера HEPA H13 медицинского стандарта и плотного сотового угля Carbon Active для поглощения смол, запахов и газов.',
     price: 12000,
     category: 'filter'
@@ -237,7 +237,7 @@ export const catalogItems: CatalogItem[] = [
     subtitle: 'PM2.5 / CO2 / TVOC / RH',
     color: 'bg-zinc-900',
     led: 'bg-[#50f2ca]/60',
-    img: '/assets/images/smart_sensor_pro_1779646644832.png',
+    img: '/assets/smart_sensor_pro_1779646644832.png',
     description: 'Прецизионный беспроводной анализатор климата в монолитном корпусе из темного анодированного сплава. Измеряет уровень углекислого газа, ультрадисперсных частиц PM2.5, летучих органических соединений и влажности с мгновенным обменом данными по протоколу ZEMAIR Link.',
     price: 18000,
     category: 'accessory'

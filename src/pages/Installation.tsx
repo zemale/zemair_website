@@ -48,7 +48,7 @@ export default function Installation() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 mb-32 items-center">
             <div className="relative aspect-[4/5] bg-zinc-900 border border-zinc-800/50 overflow-hidden group">
                 <img
-                  src="/assets/images/install_section_1779641035928.png"
+                  src="/assets/install_section_1779641035928.png"
                   alt="ZEMAIR technical wall installation cross-section"
                   className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
                   referrerPolicy="no-referrer"
@@ -116,7 +116,7 @@ export default function Installation() {
                  </div>
                  <div className="aspect-video bg-zinc-900 border border-zinc-800/50 relative overflow-hidden group">
                     <img
-                      src="/assets/images/exterior_grill_1779641053470.png"
+                      src="/assets/exterior_grill_1779641053470.png"
                       alt="Discreet external vent grill"
                       className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700"
                       referrerPolicy="no-referrer"

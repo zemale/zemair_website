@@ -28,7 +28,7 @@ export default function Philosophy() {
       <section className="relative h-[80vh] flex items-center justify-center overflow-hidden px-6">
         <div className="absolute inset-0 z-0">
           <img 
-            src="/assets/images/philosophy_hero_bg_1779647053587.png" 
+            src="/assets/philosophy_hero_bg_1779647053587.png" 
             className="w-full h-full object-cover opacity-35 grayscale"
             alt="ZEMAIR Philosophy background"
             referrerPolicy="no-referrer"
@@ -84,7 +84,7 @@ export default function Philosophy() {
           <div className="relative aspect-square">
             <div className="absolute inset-0 border border-[#f2ca50]/20 translate-x-6 translate-y-6"></div>
             <img 
-               src="/assets/images/philosophy_visual_1779647034691.png"
+               src="/assets/philosophy_visual_1779647034691.png"
                className="w-full h-full object-cover grayscale brightness-75 relative z-10 hover:grayscale-0 transition-all duration-700"
                alt="ZEMAIR Philosophy architectural integration"
                referrerPolicy="no-referrer"
