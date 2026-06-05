@@ -50,7 +50,7 @@ jobs:
         env:
           FTP_SERVER: ${{ secrets.FTP_SERVER }}
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
-          FTP_PASSWORD: *** secrets.FTP_PASSWORD }}
+          FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
           CSS_FILE=$(ls dist/assets/index-*.css | head -1 | sed 's|dist/||')
           JS_FILE=$(ls dist/assets/index-*.js | head -1 | sed 's|dist/||')
