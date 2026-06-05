@@ -54,8 +54,14 @@ jobs:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          # Generate lftp script for individual file uploads
-          cat > /tmp/lftp_script.txt <<'LFTPEOF'
+          # Find actual CSS and JS filenames (Vite adds hash)
+          CSS_FILE=$(ls dist/assets/index-*.css | head -1 | sed 's|dist/||')
+          JS_FILE=$(ls dist/assets/index-*.js | head -1 | sed 's|dist/||')
+          echo "CSS: $CSS_FILE"
+          echo "JS: $JS_FILE"
+          
+          # Generate lftp script
+          cat > /tmp/lftp_script.txt <<LFTPEOF
             set ftp:ssl-allow no
             set ftp:passive-mode on
             set net:max-retries 5
@@ -69,14 +75,14 @@ jobs:
             put dist/sitemap.xml -o /sitemap.xml
             put dist/zemair_installation_card.pdf -o /zemair_installation_card.pdf
             put dist/og-image.jpg -o /og-image.jpg
-            # Upload CSS and JS
-            put dist/assets/index-CSukljw9.css -o /assets/index-CSukljw9.css
-            put dist/assets/index-CI3y6s0x.js -o /assets/index-CI3y6s0x.js
-            # Create images directory and upload all images
+            # Upload CSS and JS with dynamic names
+            put dist/$CSS_FILE -o /assets/$CSS_FILE
+            put dist/$JS_FILE -o /assets/$JS_FILE
+            # Create images directory
             mkdir -p /assets/images
           LFTPEOF
           
-          # Add image uploads to script
+          # Add image uploads
           for f in dist/assets/images/*; do
             basename=$(basename "$f")
             echo "put $f -o /assets/images/$basename" >> /tmp/lftp_script.txt
@@ -84,5 +90,5 @@ jobs:
           
           echo "bye" >> /tmp/lftp_script.txt
           
-          # Execute lftp with generated script
+          # Execute lftp
           lftp -u "$FTP_USERNAME","$FTP_PASSWORD" "$FTP_SERVER" < /tmp/lftp_script.txt
