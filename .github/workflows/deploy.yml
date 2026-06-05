@@ -63,13 +63,8 @@ jobs:
             set mirror:parallel-transfer-count 1
             # Upload all files recursively including subdirectories
             mirror -R --delete --verbose --ignore-time --parallel=1 ./dist /
-            # Explicitly upload assets/images (mirror sometimes skips subdirectories)
-            mkdir -p /assets/images
-            lcd ./dist/assets/images
-            cd /assets/images
-            mput -d *
-            lcd ../../..
-            cd /
+            # Upload assets/images recursively
+            mirror -R --verbose --no-symlinks --parallel=1 dist/assets/images /assets/images
             # Force-upload key files: lftp mirror пропускает если совпал size
             rm -f /index.html
             put dist/index.html -o /index.html
