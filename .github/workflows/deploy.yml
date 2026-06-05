@@ -61,10 +61,11 @@ jobs:
             set net:reconnect-interval-base 5
             set net:timeout 30
             set mirror:parallel-transfer-count 1
+            # Upload all files recursively including subdirectories
             mirror -R --delete --verbose --ignore-time --parallel=1 ./dist /
-            # Ensure assets/images subdirectory exists and is uploaded
+            # Explicitly ensure assets/images is uploaded (workaround for lftp subdirectory issues)
             mkdir -p /assets/images
-            mirror -R --verbose --ignore-time --parallel=1 ./dist/assets/images /assets/images
+            mput -d ./dist/assets/images/* -O /assets/images/
             # Force-upload key files: lftp mirror пропускает если совпал size
             rm -f /index.html
             put dist/index.html -o /index.html
