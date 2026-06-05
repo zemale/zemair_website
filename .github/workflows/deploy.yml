@@ -52,8 +52,8 @@ jobs:
           FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
           FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
         run: |
-          CSS_FILE=$(ls dist/assets/index-*.css | head -1 | sed 's|dist/||')
-          JS_FILE=$(ls dist/assets/index-*.js | head -1 | sed 's|dist/||')
+          CSS_FILE=$(ls dist/assets/index-*.css | head -1 | sed 's|dist/assets/||')
+          JS_FILE=$(ls dist/assets/index-*.js | head -1 | sed 's|dist/assets/||')
           echo "CSS: $CSS_FILE"
           echo "JS: $JS_FILE"
           
