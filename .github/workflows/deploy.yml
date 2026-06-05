@@ -60,8 +60,8 @@ jobs:
           echo "CSS: $CSS_FILE"
           echo "JS: $JS_FILE"
           
-          # Generate lftp script
-          cat > /tmp/lftp_script.txt <<LFTPEOF
+          # Generate lftp script with expanded variables
+          cat > /tmp/lftp_script.txt <<EOF
             set ftp:ssl-allow no
             set ftp:passive-mode on
             set net:max-retries 5
@@ -75,12 +75,12 @@ jobs:
             put dist/sitemap.xml -o /sitemap.xml
             put dist/zemair_installation_card.pdf -o /zemair_installation_card.pdf
             put dist/og-image.jpg -o /og-image.jpg
-            # Upload CSS and JS with dynamic names
+            # Upload CSS and JS
             put dist/$CSS_FILE -o /assets/$CSS_FILE
             put dist/$JS_FILE -o /assets/$JS_FILE
             # Create images directory
             mkdir -p /assets/images
-          LFTPEOF
+EOF
           
           # Add image uploads
           for f in dist/assets/images/*; do
