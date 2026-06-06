@@ -167,7 +167,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 border border-zinc-800/50">
           <div className="md:col-span-7 relative h-[400px] md:h-auto overflow-hidden">
              <img 
-              src="/assets/customization_hero_home_1779647510561.png"
+              src="/assets/images/customization_hero_home_1779647510561.png"
               alt="Customization"
               className="w-full h-full object-cover grayscale brightness-50 contrast-125 hover:grayscale-0 transition-all duration-1000"
               referrerPolicy="no-referrer"
@@ -215,7 +215,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6 h-auto md:h-[800px]">
             <BreezerInterior 
-              image="/assets/monolith_black_interior_1779644908409.png"
+              image="/assets/images/monolith_black_interior_1779644908409.png"
               type="black"
               title="Брутальный минимализм в бетоне"
               subtitle="Monolith Black"
@@ -224,14 +224,14 @@ export default function Home() {
 
             <div className="md:col-span-4 grid grid-cols-1 gap-6">
               <BreezerInterior 
-                image="/assets/monolith_gold_interior_1779644935188.png"
+                image="/assets/images/monolith_gold_interior_1779644935188.png"
                 type="gold"
                 title="Золото и мрамор"
                 subtitle="Satin Brass"
                 className="h-[300px] md:h-full"
               />
               <BreezerInterior 
-                image="/assets/monolith_champagne_interior_1779644954155.png"
+                image="/assets/images/monolith_champagne_interior_1779644954155.png"
                 type="champagne"
                 title="Элегантность в деталях"
                 subtitle="White Gold"
@@ -242,7 +242,7 @@ export default function Home() {
           
           <div className="mt-6">
             <BreezerInterior 
-              image="/assets/monolith_white_interior_1779644974590.png"
+              image="/assets/images/monolith_white_interior_1779644974590.png"
               type="white"
               title="Чистота линий"
               subtitle="Pure Gallery White"
