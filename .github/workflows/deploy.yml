@@ -24,27 +24,13 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      - name: Deploy via SFTP
+        uses: appleboy/scp-action@v0.1.7
         with:
-          server: ${{ secrets.FTP_HOST || secrets.FTP_SERVER }}
+          host: ${{ secrets.FTP_HOST || secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USER || secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASS || secrets.FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: ${{ secrets.FTP_PATH }}/
-          protocol: ftp
-          port: 21
-          timeout: 300000
-          exclude: |
-            **/.git*
-            **/.git*/**
-            **/node_modules/**
-            **/src/**
-            **/*.ts
-            **/*.tsx
-            vite.config.ts
-            tsconfig.json
-            package*.json
-            README.md
-            TODO.md
-            .env.example
+          source: "dist/*"
+          target: ${{ secrets.FTP_PATH }}/
+          strip_components: 1
+          overwrite: true
